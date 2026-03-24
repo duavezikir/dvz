@@ -1,0 +1,840 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İslami Dualar ve Zikirler | Görsel Arapça Metinler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b3b2c 0%, #1a6d4c 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 40px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border: 1px solid #d4b48c;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #c2a27a;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #1f4e3d;
+            text-shadow: 2px 2px 0 #e4d5b6;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .header .ayet-header {
+            font-size: 1.2em;
+            color: #2d5e4a;
+            font-style: italic;
+            margin-top: 12px;
+            background: #e9e0ca;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-weight: 500;
+            border: 1px solid #c9ad7a;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dua-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .dua-card {
+            background: #fefcf3;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #e9d6b0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .dua-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 60, 30, 0.3);
+        }
+
+        .dua-title {
+            background: linear-gradient(145deg, #1f5e47, #12412f);
+            color: #ffefd7;
+            padding: 14px 22px;
+            font-size: 1.5em;
+            font-weight: 600;
+            border-bottom: 3px solid #e0b87b;
+            text-shadow: 1px 1px 2px #1a2e20;
+            letter-spacing: 1px;
+        }
+
+        .dua-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .dua-content.double-image {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .arabic-part.double {
+            flex: 1 1 45%;
+            background: #f5f1e0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            background-image: radial-gradient(circle at 10px 10px, #e2dcc5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .arabic-part.double:first-child {
+            border-right: 3px dashed #bda27a;
+        }
+        
+        .arabic-part.double:last-child {
+            border-left: none;
+        }
+        
+        .arabic-part.double img {
+            max-width: 100%;
+            max-height: 700px;
+            width: auto;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 30, 10, 0.2);
+            transition: all 0.3s ease;
+            border: 3px solid #cbb286;
+            background-color: #ffffff;
+            padding: 5px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
+        .arabic-part.double img:hover {
+            box-shadow: 0 20px 35px rgba(0, 70, 30, 0.4);
+            transform: scale(1.02);
+        }
+
+        .arabic-part {
+            flex: 1 1 45%;
+            background: #f5f1e0;
+            padding: 20px;
+            border-right: 3px dashed #bda27a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            background-image: radial-gradient(circle at 10px 10px, #e2dcc5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .arabic-part img {
+            max-width: 100%;
+            max-height: 700px;
+            width: auto;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 30, 10, 0.2);
+            transition: all 0.3s ease;
+            border: 3px solid #cbb286;
+            background-color: #ffffff;
+            padding: 5px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        .arabic-part img:hover {
+            box-shadow: 0 20px 35px rgba(0, 70, 30, 0.4);
+            transform: scale(1.02);
+        }
+
+        .turkish-part {
+            flex: 1 1 45%;
+            background: #faf7eb;
+            padding: 30px 25px;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            color: #1e3f2f;
+            border-left: 3px solid #dabf92;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .turkish-part p {
+            margin-bottom: 15px;
+        }
+
+        .turkish-part .anlam-baslik {
+            font-weight: 700;
+            color: #ab5f2c;
+            font-size: 1.3rem;
+            border-bottom: 2px dotted #c0a16b;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+        }
+        
+        .turkish-part .hadis-metni {
+            font-style: italic;
+            background: #f0ebda;
+            padding: 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            border-right: 5px solid #c2a27a;
+            color: #2c553f;
+        }
+        
+        .turkish-part .okunus {
+            background: #e8e0ca;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 10px 0;
+            color: #7a4316;
+            font-weight: 600;
+            border: 1px solid #d4b48c;
+        }
+
+        /* SADECE RESİM OLAN KART İÇİN ÖZEL STİL - SON RESİM %50 BÜYÜTÜLDÜ */
+        .dua-card.full-image-card .dua-content {
+            display: block;
+        }
+        
+        .dua-card.full-image-card .arabic-part {
+            flex: none;
+            width: 100%;
+            border-right: none;
+            min-height: auto;
+            padding: 30px;
+            background: #f5f1e0;
+        }
+        
+        /* Son resim (full-image-card içindeki img) %50 büyütüldü */
+        .dua-card.full-image-card .arabic-part img {
+            max-width: 75%;
+            max-height: 700px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            object-fit: contain;
+        }
+        
+        .dua-card.full-image-card .turkish-part {
+            display: none;
+        }
+
+        /* Alt not artık kullanılmıyor (İbrahim 1 kaldırıldı, yerine header ayeti eklendi) */
+        .footer-note {
+            display: none;
+        }
+
+        /* 99 İsim Bölümü Stilleri */
+        .esma-section {
+            margin-top: 50px;
+            background: #fefcf3;
+            border-radius: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 1px solid #dabf92;
+        }
+
+        .esma-header {
+            background: linear-gradient(145deg, #2c6e53, #1a503d);
+            padding: 25px 25px 20px;
+            text-align: center;
+            border-bottom: 4px solid #e9c68b;
+        }
+
+        .esma-header h2 {
+            font-size: 2.5em;
+            color: #fff0db;
+            text-shadow: 2px 2px 0 #1f4e2d;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .esma-ayet {
+            background: #e9e0ca;
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c5a41;
+            border: 1px solid #c9ad7a;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .esma-ayet span {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .esma-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 8px;
+            background: #fef9ef;
+            padding: 28px 24px;
+        }
+
+        .esma-item {
+            background: #ffffffea;
+            border-radius: 28px;
+            padding: 14px 18px;
+            transition: all 0.25s ease;
+            border-left: 6px solid #c0a36b;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .esma-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            background: #fffcf2;
+            border-left-color: #e7b45a;
+        }
+
+        .esma-arapca {
+            font-size: 1.55rem;
+            font-weight: 700;
+            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', serif;
+            color: #1f5e47;
+            background: #f3efdf;
+            padding: 3px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .esma-isim {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #8b4b1c;
+            margin-left: 5px;
+        }
+
+        .esma-anlam {
+            font-size: 0.95rem;
+            color: #2c4d3b;
+            line-height: 1.4;
+            font-style: normal;
+            border-left: 2px dotted #cbb786;
+            padding-left: 10px;
+            margin-left: 4px;
+            flex: 1;
+        }
+
+        @media (max-width: 700px) {
+            .esma-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .esma-header h2 {
+                font-size: 1.8em;
+            }
+            .esma-ayet {
+                font-size: 1rem;
+                padding: 8px 18px;
+            }
+            .header .ayet-header {
+                font-size: 1rem;
+                padding: 6px 14px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 0 5px #e3c184, 0 0 0 12px rgba(30, 78, 59, 0.6);
+            animation: zoomIn 0.3s ease;
+            background: #2c2c2c;
+            padding: 8px;
+            background: #1f4e3d;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 48px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(0,0,0,0.6);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            z-index: 1001;
+            border: 2px solid #e3c184;
+        }
+
+        .modal-close:hover {
+            color: #ffd966;
+            transform: scale(1.1);
+            background: rgba(0,0,0,0.8);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .dua-content {
+                flex-direction: column;
+            }
+            .arabic-part {
+                border-right: none;
+                border-bottom: 3px dashed #bda27a;
+            }
+            .turkish-part {
+                border-left: none;
+            }
+            .dua-content.double-image {
+                flex-direction: column;
+            }
+            .arabic-part.double:first-child {
+                border-right: none;
+                border-bottom: 3px dashed #bda27a;
+            }
+            .arabic-part.double:last-child {
+                border-top: none;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .arabic-part img, .arabic-part.double img {
+                max-height: 450px;
+            }
+            .dua-title {
+                font-size: 1.3em;
+                padding: 12px 18px;
+            }
+            .modal-close {
+                top: 15px;
+                right: 20px;
+                font-size: 36px;
+                width: 45px;
+                height: 45px;
+            }
+            .modal-content {
+                max-width: 95%;
+                max-height: 85%;
+            }
+            
+            .dua-card.full-image-card .arabic-part {
+                padding: 20px;
+            }
+            .dua-card.full-image-card .arabic-part img {
+                max-width: 85%;
+                max-height: 450px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+            .dua-card.full-image-card .arabic-part img {
+                max-width: 90%;
+                max-height: 380px;
+            }
+            .turkish-part .okunus {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📿 DUALAR & ZİKİRLER 📿</h1>
+            <!-- Eski açıklama metni kaldırıldı, yerine Ahzab 43 ayeti eklendi -->
+            <div class="ayet-header">
+                🌿 “Karanlıklardan aydınlığa çıkasınız diye Allah ve melekleri size destek vermektedir. Onun müminlere iyiliği boldur.” (Ahzab 43) 🌿
+            </div>
+        </div>
+
+        <div class="dua-grid">
+            <!-- 1. Ayetel Kürsi - Görsel -->
+            <div class="dua-card">
+                <div class="dua-title">✨ Ayetel Kürsi (Bakara 255) ✨</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <img src="https://hayalhanem.com/wp-content/uploads/2025/01/ayetel-kursi-arapca-okunusu.webp" 
+                             alt="Ayetel Kürsi Arapça Metin" 
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                    <div class="turkish-part">
+                        <div class="anlam-baslik">Türkçe Anlamı:</div>
+                        <p> Allah’tan başka hiçbir ilâh yoktur. O daima diridir (Hayy), bütün varlığın idaresini yürüten (Kayyum)dir. O’nu ne gaflet basar, ne de uyku. Göklerde ve yerde ne varsa hepsi O’nundur. İzni olmadan huzurunda şefaat edecek olan kimdir? O, kullarının önlerinde ve arkalarında ne varsa hepsini bilir. Onlar ise, O’nun dilediği kadarından başka ilminden hiç bir şey kavrayamazlar. O’nun kürsisi, bütün gökleri ve yeri kucaklamıştır. Onların her ikisini de görüp gözetmek O’na bir ağırlık vermez. O çok yücedir, çok büyüktür.”</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Amenerrasulü (Bakara 285-286) Görsel -->
+            <div class="dua-card">
+                <div class="dua-title">📖 Amenerrasulü (Bakara 285-286) 📖</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2019/02/amenerrasulu.jpg"
+                             alt="Amenerrasulü Arapça Metin"
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                    <div class="turkish-part">
+                        <div class="anlam-baslik">Türkçe Anlamı:</div>
+                        <p>Peygamber, Rabbinden kendisine indirilene iman etti; müminler de. Hepsi Allah’a, meleklerine, kitaplarına ve peygamberlerine iman ettiler. “O’nun peygamberlerinden hiçbiri arasında ayrım yapmayız.” dediler. “İşittik ve itaat ettik. Ey Rabbimiz! Bağışlamanı dileriz. Dönüş sanadır.”
+
+Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kazandığı iyilik kendi lehine, yaptığı kötülük de kendi aleyhinedir. Ey Rabbimiz! Unutur ya da hataya düşersek bizi sorumlu tutma! Ey Rabbimiz! Bizden öncekilere yüklediğin gibi, bize de ağır yük yükleme! Ey Rabbimiz! Gücümüzün yetmediği şeyleri bize taşıtma! Bizi affet, bizi bağışla, bize merhamet et! Sen bizim Mevlamızsın. Kâfirler topluluğuna karşı bize yardım et.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Hüvallahüllezi (Haşr 22-24) Görsel -->
+            <div class="dua-card">
+                <div class="dua-title">🌟 Hüvallahüllezi (Haşr 22-24) 🌟</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2020/01/huvallahullezi-suresi-oku-927.jpg"
+                             alt="Hüvallahüllezi Arapça Metin"
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                    <div class="turkish-part">
+                        <div class="anlam-baslik">Türkçe Anlamı:</div>
+                        <p>O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Gaybı ve görüleni bilir. O, Rahmân'dır, Rahîm'dir. O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Melik'tir, Kuddûs'tür, Selâm'dır, Mü'min'dir, Müheymin'dir, Azîz'dir, Cebbâr'dır, Mütekebbir'dir. Allah, onların ortak koştuklarından münezzehtir. O, yaratan, var eden, şekil veren Allah'tır. En güzel isimler O'nundur. Göklerde ve yerde ne varsa O'nu tespih eder. O, Azîz'dir, Hakîm'dir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Rabbena Atina Duası (Bakara 201) ve Rabbenağfirli Duası (İbrahim 41) - İki görsel yan yana -->
+            <div class="dua-card">
+                <div class="dua-title">🙏 Rabbena Atina Duası (Bakara 201) ve Rabbenağfirli Duası (İbrahim 41) 🙏</div>
+                <div class="dua-content double-image">
+                    <div class="arabic-part double">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbena-atina-duasi-935.png" 
+                             alt="Rabbena Atina Duası Arapça (Bakara 201)"
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                    <div class="arabic-part double">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbenagfirli-duasi-424.png"
+                             alt="Rabbenağfirli Duası Arapça (İbrahim 41)"
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. EN FAZİLETLİ ZİKİR, DUA VE SÖZ - SADECE RESİM, %50 BÜYÜTÜLMÜŞ BOYUTTA -->
+            <div class="dua-card full-image-card">
+                <div class="dua-title">📿 En Faziletli Zikir, Dua ve Söz 📿</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2025/03/en_faziletli_zikir_dua_soz-827.png" 
+                             alt="En Faziletli Zikir, Dua ve Söz - Arapça Metin ve Hadisler"
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Hz. Yunus’un (a.s.) Duası - Yeni eklenen kart -->
+            <div class="dua-card">
+                <div class="dua-title">🐋 Hz. Yunus’un (a.s.) Duası (Enbiya, 21/87) 🐋</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2023/05/yunuspeygamberinduasi-308.jpg" 
+                             alt="Hz. Yunus Duası Arapça Metin" 
+                             title="Büyütmek için tıklayın"
+                             loading="lazy">
+                    </div>
+                    <div class="turkish-part">
+                        <div class="anlam-baslik">Okunuşu ve Anlamı:</div>
+                        <div class="okunus">
+                            لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ
+                        </div>
+                        <p><strong>Okunuşu:</strong> Lâ ilâhe illâ ente sübhâneke innî küntü minez zâlimîn.</p>
+                                                
+                        <div class="hadis-metni">
+                            <p>📌 <strong>Hadis-i Şerif:</strong> "Sıkıntıya düşen kimse kardeşim Yunus'un duasını okursa Allah onun sıkıntısını giderir. O dua şöyledir: 'Senden başka hiçbir ilah yoktur. Seni eksikliklerden uzak tutarım. Ben gerçekten (nefsine) zulmedenlerden oldum.'" <em>(İbn Teymiyye, Fetaval Kübra, 5/218)</em></p>
+                            <p style="margin-top: 12px;">📌 “Yunus (as) balığın karnında iken yaptığı duâ olan: 'Senden başka hiçbir ilah yoktur. Seni eksikliklerden uzak tutarım. Ben gerçekten (nefsine) zulmedenlerden oldum.' (Enbiya, 21/87) Bu duâyı herhangi bir konuda yaparsa, Allah onun duâsını mutlaka kabul eder.” <em>(Tirmizî, Dua 82)</em></p>
+                        </div>
+                        
+                        <p style="margin-top: 12px; font-size: 1rem; color: #6b4c2c;">🌟 <strong>Fazileti:</strong> Bu dua, sıkıntı, darlık ve zorluk anlarında okunduğunda Allah'ın izniyle ferahlık ve kurtuluşa vesile olur. Hz. Yunus (a.s.) balığın karnında bu dua ile Allah'a yönelmiş ve kurtuluşa ermiştir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Allah'ın 99 İsmi Bölümü (En alta eklendi) -->
+        <div class="esma-section">
+            <div class="esma-header">
+                <h2>🤲 Allah'ın 99 İsmi (Esmaü'l-Hüsna) 🤲</h2>
+                <div class="esma-ayet">
+                    <span>“En güzel isimler Allah'ındır. O halde O'na o güzel isimlerle dua edin.”</span> (Araf, 180)
+                </div>
+            </div>
+            <div class="esma-grid" id="esmaGridContainer">
+                <!-- 99 isim javascript ile dinamik eklenecek (anlamlarıyla) -->
+            </div>
+        </div>
+        
+        <!-- ALT AYET KALDIRILDI: Eski İbrahim 1 ayeti silindi, yalnızca header'daki Ahzab 43 ayeti bırakıldı -->
+    </div>
+
+    <!-- Modal (Büyük görsel penceresi) -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Büyük görsel">
+    </div>
+
+    <script>
+        (function() {
+            // Modal elementleri
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+
+            // Sayfadaki tüm img'leri seç (sadece dua kartlarının içindeki img'ler)
+            const allImages = document.querySelectorAll('.arabic-part img, .arabic-part.double img');
+            
+            // Her görsele tıklama olayı ekle
+            allImages.forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const src = this.getAttribute('src');
+                    const alt = this.getAttribute('alt') || 'Dua görseli';
+                    
+                    if (src) {
+                        modalImg.setAttribute('src', src);
+                        modalImg.setAttribute('alt', alt);
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Modal'ı kapatma fonksiyonu
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+
+        // Allah'ın 99 İsmi (Arapça, isim, anlam)
+        const esmaList = [
+            { arabic: "الرَّحْمَنُ", name: "Er-Rahmân", meaning: "Rahmeti bol olan, dünyada herkese merhamet eden" },
+            { arabic: "الرَّحِيمُ", name: "Er-Rahîm", meaning: "Ahirette müminlere merhamet eden" },
+            { arabic: "الْمَلِكُ", name: "El-Melik", meaning: "Mülkün gerçek sahibi, hükümran" },
+            { arabic: "الْقُدُّوسُ", name: "El-Kuddûs", meaning: "Bütün noksanlıklardan uzak, mukaddes" },
+            { arabic: "السَّلَامُ", name: "Es-Selâm", meaning: "Kurtuluş veren, selamet kaynağı" },
+            { arabic: "الْمُؤْمِنُ", name: "El-Mü'min", meaning: "Güven veren, inanç nimeti bahşeden" },
+            { arabic: "الْمُهَيْمِنُ", name: "El-Müheymin", meaning: "Koruyup gözeten, her şeye şahit" },
+            { arabic: "الْعَزِيزُ", name: "El-Azîz", meaning: "Üstün ve mağlup edilmez güç sahibi" },
+            { arabic: "الْجَبَّارُ", name: "El-Cebbâr", meaning: "Dilediğini zorla yaptıran, kudretli" },
+            { arabic: "الْمُتَكَبِّرُ", name: "El-Mütekebbir", meaning: "Büyüklükte eşsiz olan" },
+            { arabic: "الْخَالِقُ", name: "El-Hâlık", meaning: "Yaratan, takdir eden" },
+            { arabic: "الْبَارِئُ", name: "El-Bâri", meaning: "Eşsiz yaratıp vareden" },
+            { arabic: "الْمُصَوِّرُ", name: "El-Musavvir", meaning: "Varlıklara şekil veren" },
+            { arabic: "الْغَفَّارُ", name: "El-Gaffâr", meaning: "Çok bağışlayan, kusurları örten" },
+            { arabic: "الْقَهَّارُ", name: "El-Kahhâr", meaning: "Her şeye galip, kahredici" },
+            { arabic: "الْوَهَّابُ", name: "El-Vehhâb", meaning: "Karşılıksız ihsan eden" },
+            { arabic: "الرَّزَّاقُ", name: "Er-Rezzâk", meaning: "Rızık veren, her şeyin rızkını yaratan" },
+            { arabic: "الْفَتَّاحُ", name: "El-Fettâh", meaning: "Her türlü kapıyı açan, hükmeden" },
+            { arabic: "الْعَلِيمُ", name: "El-Alîm", meaning: "Her şeyi en iyi bilen" },
+            { arabic: "الْقَابِضُ", name: "El-Kâbid", meaning: "Rızıkları daraltan, kabzeden" },
+            { arabic: "الْبَاسِطُ", name: "El-Bâsit", meaning: "Rızkı genişleten, yayıp bolluk veren" },
+            { arabic: "الْخَافِضُ", name: "El-Hâfid", meaning: "Alçaltan, derece indiren" },
+            { arabic: "الرَّافِعُ", name: "Er-Râfî", meaning: "Yücelten, şeref veren" },
+            { arabic: "الْمُعِزُّ", name: "El-Mu'izz", meaning: "Aziz kılan, izzet veren" },
+            { arabic: "الْمُذِلُّ", name: "El-Muzill", meaning: "Zelil eden, alçaltan" },
+            { arabic: "السَّمِيعُ", name: "Es-Semî", meaning: "Her şeyi işiten" },
+            { arabic: "الْبَصِيرُ", name: "El-Basîr", meaning: "Her şeyi gören" },
+            { arabic: "الْحَكَمُ", name: "El-Hakem", meaning: "Hüküm veren, adaletli" },
+            { arabic: "الْعَدْلُ", name: "El-Adl", meaning: "Mutlak adalet sahibi" },
+            { arabic: "اللَّطِيفُ", name: "El-Latîf", meaning: "Lütufkâr, ince işlerin sahibi" },
+            { arabic: "الْخَبِيرُ", name: "El-Habîr", meaning: "Her şeyin iç yüzünü bilen" },
+            { arabic: "الْحَلِيمُ", name: "El-Halîm", meaning: "Yumuşak davranan, cezada acele etmeyen" },
+            { arabic: "الْعَظِيمُ", name: "El-Azîm", meaning: "Ululuk ve azamet sahibi" },
+            { arabic: "الْغَفُورُ", name: "El-Gafûr", meaning: "Çok bağışlayan, affedicidir" },
+            { arabic: "الشَّكُورُ", name: "Eş-Şekûr", meaning: "Az amele çok mükafat veren" },
+            { arabic: "الْعَلِيُّ", name: "El-Aliyy", meaning: "Yüce ve ulu" },
+            { arabic: "الْكَبِيرُ", name: "El-Kebîr", meaning: "Büyüklük sahibi" },
+            { arabic: "الْحَفِيظُ", name: "El-Hafîz", meaning: "Koruyup gözeten" },
+            { arabic: "الْمُقِيتُ", name: "El-Mukît", meaning: "Her şeye güç yetiren, yiyecek veren" },
+            { arabic: "الْحَسِيبُ", name: "El-Hasîb", meaning: "Hesap gören, kâfi" },
+            { arabic: "الْجَلِيلُ", name: "El-Celîl", meaning: "Celâl ve ikram sahibi" },
+            { arabic: "الْكَرِيمُ", name: "El-Kerîm", meaning: "Kerem ve cömertlik sahibi" },
+            { arabic: "الرَّقِيبُ", name: "Er-Rakîb", meaning: "Her an gözetleyen" },
+            { arabic: "الْمُجِيبُ", name: "El-Mucîb", meaning: "Duaları kabul eden" },
+            { arabic: "الْوَاسِعُ", name: "El-Vâsi", meaning: "Rahmeti ve ilmi geniş olan" },
+            { arabic: "الْحَكِيمُ", name: "El-Hakîm", meaning: "Hikmet sahibi" },
+            { arabic: "الْوَدُودُ", name: "El-Vedûd", meaning: "Kullarını seven ve sevilen" },
+            { arabic: "الْمَجِيدُ", name: "El-Mecîd", meaning: "Şerefli ve yüce" },
+            { arabic: "الْبَاعِثُ", name: "El-Bâis", meaning: "Ölümden sonra dirilten" },
+            { arabic: "الشَّهِيدُ", name: "Eş-Şehîd", meaning: "Her şeye şahit olan" },
+            { arabic: "الْحَقُّ", name: "El-Hak", meaning: "Gerçek varlık, hak ve adalet" },
+            { arabic: "الْوَكِيلُ", name: "El-Vekîl", meaning: "Vekil olarak güvenilen" },
+            { arabic: "الْقَوِيُّ", name: "El-Kaviyy", meaning: "Gücü her şeye yeten" },
+            { arabic: "الْمَتِينُ", name: "El-Metîn", meaning: "Çok sağlam, kudretli" },
+            { arabic: "الْوَلِيُّ", name: "El-Veliyy", meaning: "Dost ve yardımcı" },
+            { arabic: "الْحَمِيدُ", name: "El-Hamîd", meaning: "Övülmeye layık" },
+            { arabic: "الْمُحْصِي", name: "El-Muhsî", meaning: "Her şeyi sayan" },
+            { arabic: "الْمُبْدِئُ", name: "El-Mubdi", meaning: "Yaratmaya başlayan" },
+            { arabic: "الْمُعِيدُ", name: "El-Muîd", meaning: "Yok edip yeniden var eden" },
+            { arabic: "الْمُحْيِي", name: "El-Muhyî", meaning: "Hayat veren" },
+            { arabic: "الْمُمِيتُ", name: "El-Mumît", meaning: "Öldüren" },
+            { arabic: "الْحَيُّ", name: "El-Hayy", meaning: "Diri, sonsuz hayat sahibi" },
+            { arabic: "الْقَيُّومُ", name: "El-Kayyûm", meaning: "Her şeyi ayakta tutan" },
+            { arabic: "الْوَاجِدُ", name: "El-Vâcid", meaning: "Dilediğini bulan, hiçbir şeyden yoksuz" },
+            { arabic: "الْمَاجِدُ", name: "El-Mâcid", meaning: "Şanı yüce, kerem sahibi" },
+            { arabic: "الْوَاحِدُ", name: "El-Vâhid", meaning: "Bir ve tek" },
+            { arabic: "الْأَحَدُ", name: "El-Ehad", meaning: "Eşsiz, benzersiz" },
+            { arabic: "الصَّمَدُ", name: "Es-Samed", meaning: "Her şey muhtaç, O hiçbir şeye muhtaç değil" },
+            { arabic: "الْقَادِرُ", name: "El-Kâdir", meaning: "Her şeye gücü yeten" },
+            { arabic: "الْمُقْتَدِرُ", name: "El-Muktedir", meaning: "Her şeyi dilediği gibi yapmaya muktedir" },
+            { arabic: "الْمُقَدِّمُ", name: "El-Mukaddim", meaning: "Dilediğini öne geçiren" },
+            { arabic: "الْمُؤَخِّرُ", name: "El-Muahhir", meaning: "Dilediğini erteleyen" },
+            { arabic: "الْأَوَّلُ", name: "El-Evvel", meaning: "İlk, başlangıcı olmayan" },
+            { arabic: "الْآخِرُ", name: "El-Âhir", meaning: "Son, varlığı sonsuz" },
+            { arabic: "الظَّاهِرُ", name: "Ez-Zâhir", meaning: "Varlığı açık olan" },
+            { arabic: "الْبَاطِنُ", name: "El-Bâtın", meaning: "Gizli olan, her şeyin gerçeği" },
+            { arabic: "الْوَالِي", name: "El-Vâlî", meaning: "Her şeyin sahibi ve yöneticisi" },
+            { arabic: "الْمُتَعَالِي", name: "El-Müteâlî", meaning: "Yücelerden yüce" },
+            { arabic: "الْبَرُّ", name: "El-Berr", meaning: "İyilik ve ihsanı bol" },
+            { arabic: "التَّوَّابُ", name: "Et-Tevvâb", meaning: "Tövbeleri çok kabul eden" },
+            { arabic: "الْمُنْتَقِمُ", name: "El-Müntakim", meaning: "Suçlulardan intikam alan" },
+            { arabic: "الْعَفُوُّ", name: "El-Afüvv", meaning: "Çok affeden" },
+            { arabic: "الرَّؤُوفُ", name: "Er-Raûf", meaning: "Şefkatli, merhametli" },
+            { arabic: "مَالِكُ الْمُلْكِ", name: "Mâlikü’l-Mülk", meaning: "Mülkün gerçek sahibi" },
+            { arabic: "ذُو الْجَلَالِ وَالإِكْرَامِ", name: "Zü'l-Celâli ve'l-İkrâm", meaning: "Celal ve ikram sahibi" },
+            { arabic: "الْمُقْسِطُ", name: "El-Muksit", meaning: "Adaletle hükmeden" },
+            { arabic: "الْجَامِعُ", name: "El-Câmi", meaning: "Dilediğini toplayan" },
+            { arabic: "الْغَنِيُّ", name: "El-Ganiyy", meaning: "Zengin, hiçbir şeye ihtiyacı olmayan" },
+            { arabic: "الْمُغْنِي", name: "El-Mugnî", meaning: "Zenginlik veren" },
+            { arabic: "الْمَانِعُ", name: "El-Mâni", meaning: "Engelleyen, koruyan" },
+            { arabic: "الضَّارُ", name: "Ed-Dârr", meaning: "Dilediğine zarar veren (hikmetle)" },
+            { arabic: "النَّافِعُ", name: "En-Nâfi", meaning: "Dilediğine fayda veren" },
+            { arabic: "النُّورُ", name: "En-Nûr", meaning: "Gökleri ve yeri aydınlatan" },
+            { arabic: "الْهَادِي", name: "El-Hâdî", meaning: "Doğru yolu gösteren" },
+            { arabic: "الْبَدِيعُ", name: "El-Bedî", meaning: "Eşsiz ve örneksiz yaratan" },
+            { arabic: "الْبَاقِي", name: "El-Bâkī", meaning: "Varlığı sonsuz, ebedi" },
+            { arabic: "الْوَارِثُ", name: "El-Vâris", meaning: "Her şeyin gerçek varisi" },
+            { arabic: "الرَّشِيدُ", name: "Er-Reşîd", meaning: "Doğru yola ileten, her işi isabetli" },
+            { arabic: "الصَّبُورُ", name: "Es-Sabûr", meaning: "Çok sabırlı, hemen cezalandırmayan" }
+        ];
+
+        const esmaContainer = document.getElementById('esmaGridContainer');
+        if (esmaContainer) {
+            esmaList.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'esma-item';
+                div.innerHTML = `
+                    <span class="esma-arapca">${item.arabic}</span>
+                    <span class="esma-isim">${item.name}</span>
+                    <span class="esma-anlam">• ${item.meaning}</span>
+                `;
+                esmaContainer.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
