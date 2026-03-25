@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=5PlaOFvR77fh&format=png&color=000000">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İslami Dualar ve Zikirler | Görsel Arapça Metinler</title>
@@ -257,7 +256,116 @@
             display: none;
         }
 
-        /* Alt not artık kullanılmıyor (İbrahim 1 kaldırıldı, yerine header ayeti eklendi) */
+        /* ----- YENİ: Lâ havle zikri kartı için özel çerçeveli stil ----- */
+        .zikir-card {
+            background: #fefcf3;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #e9d6b0;
+            transition: all 0.2s ease;
+        }
+        
+        .zikir-card .dua-title {
+            background: linear-gradient(145deg, #2b6e4f, #1a5a41);
+        }
+        
+        .zikir-card .dua-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .zikir-card .arabic-part {
+            flex: 1 1 40%;
+            background: #faf3e2;
+            border-right: 3px solid #cfb37a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            min-height: 240px;
+        }
+        
+        .zikir-card .arabic-text {
+            font-size: 2.5rem;
+            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', serif;
+            font-weight: 700;
+            color: #1f5e47;
+            background: #ffffffdd;
+            padding: 25px 18px;
+            border-radius: 60px;
+            text-align: center;
+            line-height: 1.5;
+            border: 2px solid #dbb77a;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+        
+        .zikir-card .turkish-part {
+            flex: 1 1 55%;
+            background: #fffcf0;
+            border-left: 3px solid #e2c794;
+            padding: 28px 28px;
+        }
+        
+        .zikir-card .turkish-part .anlam-baslik {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+        
+        .zikir-card .aciklama-kutusu {
+            background: #f1ebda;
+            border-left: 8px solid #c2a050;
+            border-radius: 28px;
+            padding: 20px 22px;
+            margin-top: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            transition: background 0.2s;
+            border-right: 1px solid #e2cfaa;
+        }
+        
+        .zikir-card .aciklama-kutusu p {
+            font-size: 1rem;
+            line-height: 1.65rem;
+            color: #2c4a34;
+            margin-bottom: 8px;
+        }
+        
+        .zikir-card .aciklama-kutusu strong {
+            color: #a55417;
+            font-weight: 700;
+        }
+        
+        .zikir-card .okunus {
+            font-size: 1.35rem;
+            font-family: monospace;
+            font-weight: bold;
+            background: #ece2ce;
+            padding: 8px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 800px) {
+            .zikir-card .dua-content {
+                flex-direction: column;
+            }
+            .zikir-card .arabic-part {
+                border-right: none;
+                border-bottom: 3px dashed #bda27a;
+            }
+            .zikir-card .turkish-part {
+                border-left: none;
+            }
+            .zikir-card .arabic-text {
+                font-size: 1.9rem;
+                padding: 18px 12px;
+            }
+        }
+        /* ---------------------------------------- */
+        
         .footer-note {
             display: none;
         }
@@ -529,7 +637,6 @@
     <div class="container">
         <div class="header">
             <h1>📿 DUALAR & ZİKİRLER 📿</h1>
-            <!-- Eski açıklama metni kaldırıldı, yerine Ahzab 43 ayeti eklendi -->
             <div class="ayet-header">
                 🌿 “Karanlıklardan aydınlığa çıkasınız diye Allah ve melekleri size destek vermektedir. Onun müminlere iyiliği boldur.” (Ahzab 43) 🌿
             </div>
@@ -621,6 +728,32 @@ Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kaz
                 </div>
             </div>
 
+            <!-- ★ YENİ EKLENEN: Lâ havle ve lâ kuvvete illâ billâh zikri (BELİRGİN ÇERÇEVE + AÇIKLAMA) ★ -->
+            <div class="zikir-card">
+                <div class="dua-title">🌿 Lâ Havle ve Lâ Kuvvete İllâ Billâh 🌿</div>
+                <div class="dua-content">
+                    <div class="arabic-part">
+                        <div class="arabic-text">
+                            لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ
+                        </div>
+                    </div>
+                    <div class="turkish-part">
+                        <div class="anlam-baslik">📖 Anlamı ve Okunuşu:</div>
+                        <div class="okunus">
+                            Lâ havle ve lâ kuvvete illâ billâh
+                        </div>
+                        <p><strong>Türkçe Meali:</strong> “Güç ve kuvvet, ancak Allah’ın yardımıyla elde edilir.”</p>
+                        
+                        <!-- Açıklama kutusu (belirgin çerçeve ve arka plan) -->
+                        <div class="aciklama-kutusu">
+                            <p><strong>✨ Bu zikir, kişinin Allah’a olan acziyetini ve O’na olan ihtiyacını ifade eder.</strong> Peygamber Efendimiz (s.a.v.) bu zikri <strong>“cennet hazinelerinden bir hazine”</strong> olarak müjdelemiştir. Her türlü zorluk ve sıkıntı anında okunması tavsiye edilmiştir.</p>
+                            <p style="margin-top: 8px;">📌 Hadis-i Şerif: <em>“Lâ havle ve lâ kuvvete illâ billâh deyiniz; zira o, cennet hazinelerinden bir hazinedir.”</em> (Buhârî, Deavat 50; Müslim, Zikir 35)</p>
+                            <p>Bu tesbih, kulun kendi gücünü Allah’ın yardımından ayrı görmediğinin, her işte O’na dayandığının en güzel ifadesidir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 6. Hz. Yunus’un (a.s.) Duası - Yeni eklenen kart -->
             <div class="dua-card">
                 <div class="dua-title">🐋 Hz. Yunus’un (a.s.) Duası (Enbiya, 21/87) 🐋</div>
@@ -661,8 +794,6 @@ Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kaz
                 <!-- 99 isim javascript ile dinamik eklenecek (anlamlarıyla) -->
             </div>
         </div>
-        
-        <!-- ALT AYET KALDIRILDI: Eski İbrahim 1 ayeti silindi, yalnızca header'daki Ahzab 43 ayeti bırakıldı -->
     </div>
 
     <!-- Modal (Büyük görsel penceresi) -->
