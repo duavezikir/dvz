@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=5PlaOFvR77fh&format=png&color=000000">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İslami Dualar ve Zikirler | Görsel Arapça Metinler</title>
+    
     <style>
         * {
             margin: 0;
@@ -21,6 +21,102 @@
             flex-direction: column;
             align-items: center;
         }
+
+        /* ===== NAVİGASYON MENÜSÜ ===== */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(135deg, #0b3b2c 0%, #12412f 100%);
+            border-bottom: 3px solid #e0b87b;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .nav-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 0 10px;
+        }
+
+        .nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            color: #ffd966;
+            padding: 12px 16px 12px 10px;
+            white-space: nowrap;
+            border-right: 2px solid #2d7a55;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            color: #d4f0dd;
+            text-decoration: none;
+            padding: 13px 13px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            border-radius: 0;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid transparent;
+            letter-spacing: 0.3px;
+            flex-shrink: 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffd966;
+            border-bottom: 3px solid #e0b87b;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        @media (max-width: 900px) {
+            .nav-logo {
+                font-size: 1.1rem;
+                padding: 10px 12px 10px 8px;
+            }
+            .nav-link {
+                font-size: 0.75rem;
+                padding: 11px 9px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-logo {
+                font-size: 1rem;
+                padding: 9px 10px 9px 6px;
+            }
+            .nav-link {
+                font-size: 0.7rem;
+                padding: 10px 8px;
+            }
+        }
+        /* ============================== */
+
+        /* ===== SAYFA SİSTEMİ ===== */
+        .page-content {
+            display: none;
+            animation: pageFadeIn 0.35s ease;
+        }
+        .page-content.active {
+            display: block;
+        }
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        /* ========================= */
 
         .container {
             max-width: 1300px;
@@ -373,7 +469,7 @@
 
         /* 99 İsim Bölümü Stilleri */
         .esma-section {
-            margin-top: 50px;
+            margin-top: 0;
             background: #fefcf3;
             border-radius: 40px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -634,168 +730,161 @@
         }
     </style>
 </head>
-<body>
+<body style="padding-top: 50px;">
+
+    <!-- ===== NAVİGASYON MENÜSÜ ===== -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <div class="nav-logo">📿 Dualar ve Zikirler</div>
+            <a class="nav-link" href="#" data-page="ayetel-kursi">✨ Ayetel Kürsi</a>
+            <a class="nav-link" href="#" data-page="amenerrasulu">📖 Amenerrasulü</a>
+            <a class="nav-link" href="#" data-page="huvallahullezi">🌟 Hüvallahüllezi</a>
+            <a class="nav-link" href="#" data-page="rabbena">🙏 Rabbena Duaları</a>
+            <a class="nav-link" href="#" data-page="faziletli-zikir">📿 Faziletli Zikir</a>
+            <a class="nav-link" href="#" data-page="la-havle">🌿 Lâ Havle</a>
+            <a class="nav-link" href="#" data-page="yunus-duasi">🐋 Hz. Yunus'un Duası</a>
+            <a class="nav-link" href="#" data-page="esma">🤲 99 İsim</a>
+        </div>
+    </nav>
+    <!-- ================================ -->
+
     <div class="container">
         <div class="header">
-            <h1>📿 DUALAR & ZİKİRLER 📿</h1>
-            <div class="ayet-header">
+                        <div class="ayet-header">
                 🌿 “Karanlıklardan aydınlığa çıkasınız diye Allah ve melekleri size destek vermektedir. Onun müminlere iyiliği boldur.” (Ahzab 43) 🌿
             </div>
-        </div>
-
-        <div class="dua-grid">
-            <!-- 1. Ayetel Kürsi - Görsel -->
-            <div class="dua-card">
+        
+        <!-- PAGE: Ayetel Kürsi -->
+        <div class="page-content" id="page-ayetel-kursi">
+            <div class="dua-card" id="ayetel-kursi">
                 <div class="dua-title">✨ Ayetel Kürsi (Bakara 255) ✨</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <img src="https://hayalhanem.com/wp-content/uploads/2025/01/ayetel-kursi-arapca-okunusu.webp" 
-                             alt="Ayetel Kürsi Arapça Metin" 
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://hayalhanem.com/wp-content/uploads/2025/01/ayetel-kursi-arapca-okunusu.webp" alt="Ayetel Kürsi Arapça Metin" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                     <div class="turkish-part">
                         <div class="anlam-baslik">Türkçe Anlamı:</div>
-                        <p> Allah’tan başka hiçbir ilâh yoktur. O daima diridir (Hayy), bütün varlığın idaresini yürüten (Kayyum)dir. O’nu ne gaflet basar, ne de uyku. Göklerde ve yerde ne varsa hepsi O’nundur. İzni olmadan huzurunda şefaat edecek olan kimdir? O, kullarının önlerinde ve arkalarında ne varsa hepsini bilir. Onlar ise, O’nun dilediği kadarından başka ilminden hiç bir şey kavrayamazlar. O’nun kürsisi, bütün gökleri ve yeri kucaklamıştır. Onların her ikisini de görüp gözetmek O’na bir ağırlık vermez. O çok yücedir, çok büyüktür.”</p>
+                        <p>Allah'tan başka hiçbir ilâh yoktur. O daima diridir (Hayy), bütün varlığın idaresini yürüten (Kayyum)dir. O'nu ne gaflet basar, ne de uyku. Göklerde ve yerde ne varsa hepsi O'nundur. İzni olmadan huzurunda şefaat edecek olan kimdir? O, kullarının önlerinde ve arkalarında ne varsa hepsini bilir. Onlar ise, O'nun dilediği kadarından başka ilminden hiç bir şey kavrayamazlar. O'nun kürsisi, bütün gökleri ve yeri kucaklamıştır. Onların her ikisini de görüp gözetmek O'na bir ağırlık vermez. O çok yücedir, çok büyüktür."</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 2. Amenerrasulü (Bakara 285-286) Görsel -->
-            <div class="dua-card">
+        <!-- PAGE: Amenerrasulü -->
+        <div class="page-content" id="page-amenerrasulu">
+            <div class="dua-card" id="amenerrasulu">
                 <div class="dua-title">📖 Amenerrasulü (Bakara 285-286) 📖</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2019/02/amenerrasulu.jpg"
-                             alt="Amenerrasulü Arapça Metin"
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2019/02/amenerrasulu.jpg" alt="Amenerrasulü Arapça Metin" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                     <div class="turkish-part">
                         <div class="anlam-baslik">Türkçe Anlamı:</div>
-                        <p>Peygamber, Rabbinden kendisine indirilene iman etti; müminler de. Hepsi Allah’a, meleklerine, kitaplarına ve peygamberlerine iman ettiler. “O’nun peygamberlerinden hiçbiri arasında ayrım yapmayız.” dediler. “İşittik ve itaat ettik. Ey Rabbimiz! Bağışlamanı dileriz. Dönüş sanadır.”
-
-Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kazandığı iyilik kendi lehine, yaptığı kötülük de kendi aleyhinedir. Ey Rabbimiz! Unutur ya da hataya düşersek bizi sorumlu tutma! Ey Rabbimiz! Bizden öncekilere yüklediğin gibi, bize de ağır yük yükleme! Ey Rabbimiz! Gücümüzün yetmediği şeyleri bize taşıtma! Bizi affet, bizi bağışla, bize merhamet et! Sen bizim Mevlamızsın. Kâfirler topluluğuna karşı bize yardım et.</p>
+                        <p>Peygamber, Rabbinden kendisine indirilene iman etti; müminler de. Hepsi Allah'a, meleklerine, kitaplarına ve peygamberlerine iman ettiler. "O'nun peygamberlerinden hiçbiri arasında ayrım yapmayız." dediler. "İşittik ve itaat ettik. Ey Rabbimiz! Bağışlamanı dileriz. Dönüş sanadır."<br><br>Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kazandığı iyilik kendi lehine, yaptığı kötülük de kendi aleyhinedir. Ey Rabbimiz! Unutur ya da hataya düşersek bizi sorumlu tutma! Ey Rabbimiz! Bizden öncekilere yüklediğin gibi, bize de ağır yük yükleme! Ey Rabbimiz! Gücümüzün yetmediği şeyleri bize taşıtma! Bizi affet, bizi bağışla, bize merhamet et! Sen bizim Mevlamızsın. Kâfirler topluluğuna karşı bize yardım et.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 3. Hüvallahüllezi (Haşr 22-24) Görsel -->
-            <div class="dua-card">
+        <!-- PAGE: Hüvallahüllezi -->
+        <div class="page-content" id="page-huvallahullezi">
+            <div class="dua-card" id="huvallahullezi">
                 <div class="dua-title">🌟 Hüvallahüllezi (Haşr 21-24) 🌟</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2020/01/huvallahullezi-suresi-oku-927.jpg"
-                             alt="Hüvallahüllezi Arapça Metin"
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2020/01/huvallahullezi-suresi-oku-927.jpg" alt="Hüvallahüllezi Arapça Metin" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                     <div class="turkish-part">
                         <div class="anlam-baslik">Türkçe Anlamı:</div>
-                        <p>Eğer biz bu Kur’an’ı bir dağın tepesine indirseydik, sen onu Allah korkusundan başını eğip paramparça olduğunu görürdün. Biz bu misâlleri insanlara veriyoruz ki, etraflıca düşünüp gerekli dersi alsınlar. O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Gaybı ve görüleni bilir. O, Rahmân'dır, Rahîm'dir. O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Melik'tir, Kuddûs'tür, Selâm'dır, Mü'min'dir, Müheymin'dir, Azîz'dir, Cebbâr'dır, Mütekebbir'dir. Allah, onların ortak koştuklarından münezzehtir. O, yaratan, var eden, şekil veren Allah'tır. En güzel isimler O'nundur. Göklerde ve yerde ne varsa O'nu tespih eder. O, Azîz'dir, Hakîm'dir.</p>
+                        <p>Eğer biz bu Kur'an'ı bir dağın tepesine indirseydik, sen onu Allah korkusundan başını eğip paramparça olduğunu görürdün. Biz bu misâlleri insanlara veriyoruz ki, etraflıca düşünüp gerekli dersi alsınlar. O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Gaybı ve görüleni bilir. O, Rahmân'dır, Rahîm'dir. O, kendisinden başka hiçbir ilâh olmayan Allah'tır. Melik'tir, Kuddûs'tür, Selâm'dır, Mü'min'dir, Müheymin'dir, Azîz'dir, Cebbâr'dır, Mütekebbir'dir. Allah, onların ortak koştuklarından münezzehtir. O, yaratan, var eden, şekil veren Allah'tır. En güzel isimler O'nundur. Göklerde ve yerde ne varsa O'nu tespih eder. O, Azîz'dir, Hakîm'dir.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 4. Rabbena Atina Duası (Bakara 201) ve Rabbenağfirli Duası (İbrahim 41) - İki görsel yan yana -->
-            <div class="dua-card">
+        <!-- PAGE: Rabbena -->
+        <div class="page-content" id="page-rabbena">
+            <div class="dua-card" id="rabbena">
                 <div class="dua-title">🙏 Rabbena Atina Duası (Bakara 201) ve Rabbenağfirli Duası (İbrahim 41) 🙏</div>
                 <div class="dua-content double-image">
                     <div class="arabic-part double">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbena-atina-duasi-935.png" 
-                             alt="Rabbena Atina Duası Arapça (Bakara 201)"
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbena-atina-duasi-935.png" alt="Rabbena Atina Duası Arapça (Bakara 201)" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                     <div class="arabic-part double">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbenagfirli-duasi-424.png"
-                             alt="Rabbenağfirli Duası Arapça (İbrahim 41)"
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2026/03/rabbenagfirli-duasi-424.png" alt="Rabbenağfirli Duası Arapça (İbrahim 41)" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 5. EN FAZİLETLİ ZİKİR, DUA VE SÖZ - SADECE RESİM, %50 BÜYÜTÜLMÜŞ BOYUTTA -->
-            <div class="dua-card full-image-card">
+        <!-- PAGE: Faziletli Zikir -->
+        <div class="page-content" id="page-faziletli-zikir">
+            <div class="dua-card full-image-card" id="faziletli-zikir">
                 <div class="dua-title">📿 En Faziletli Zikir, Dua ve Söz 📿</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2025/03/en_faziletli_zikir_dua_soz-827.png" 
-                             alt="En Faziletli Zikir, Dua ve Söz - Arapça Metin ve Hadisler"
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2025/03/en_faziletli_zikir_dua_soz-827.png" alt="En Faziletli Zikir, Dua ve Söz" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- ★ YENİ EKLENEN: Lâ havle ve lâ kuvvete illâ billâh zikri (BELİRGİN ÇERÇEVE + AÇIKLAMA) ★ -->
-            <div class="zikir-card">
+        <!-- PAGE: Lâ Havle -->
+        <div class="page-content" id="page-la-havle">
+            <div class="zikir-card" id="la-havle">
                 <div class="dua-title">🌿 Lâ Havle ve Lâ Kuvvete İllâ Billâh 🌿</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <div class="arabic-text">
-                            لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ
-                        </div>
+                        <div class="arabic-text">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ</div>
                     </div>
                     <div class="turkish-part">
                         <div class="anlam-baslik">📖 Anlamı ve Okunuşu:</div>
-                        <div class="okunus">
-                            Lâ havle ve lâ kuvvete illâ billâh
-                        </div>
-                        <p><strong>Türkçe Meali:</strong> “Güç ve kuvvet, ancak Allah’ın yardımıyla elde edilir.”</p>
-                        
-                        <!-- Açıklama kutusu (belirgin çerçeve ve arka plan) -->
+                        <div class="okunus">Lâ havle ve lâ kuvvete illâ billâh</div>
+                        <p><strong>Türkçe Meali:</strong> "Güç ve kuvvet, ancak Allah'ın yardımıyla elde edilir."</p>
                         <div class="aciklama-kutusu">
-                            <p><strong>✨ Bu zikir, kişinin Allah’a olan acziyetini ve O’na olan ihtiyacını ifade eder.</strong> Peygamber Efendimiz (s.a.v.) bu zikri <strong>“cennet hazinelerinden bir hazine”</strong> olarak müjdelemiştir. Her türlü zorluk ve sıkıntı anında okunması tavsiye edilmiştir.</p>
-                            <p style="margin-top: 8px;">📌 Hadis-i Şerif: <em>“Lâ havle ve lâ kuvvete illâ billâh deyiniz; zira o, cennet hazinelerinden bir hazinedir.”</em> (Buhârî, Deavat 50; Müslim, Zikir 35)</p>
-                            <p>Bu tesbih, kulun kendi gücünü Allah’ın yardımından ayrı görmediğinin, her işte O’na dayandığının en güzel ifadesidir.</p>
+                            <p><strong>✨ Bu zikir, kişinin Allah'a olan acziyetini ve O'na olan ihtiyacını ifade eder.</strong> Peygamber Efendimiz (s.a.v.) bu zikri <strong>"cennet hazinelerinden bir hazine"</strong> olarak müjdelemiştir.</p>
+                            <p style="margin-top: 8px;">📌 Hadis-i Şerif: <em>"Lâ havle ve lâ kuvvete illâ billâh deyiniz; zira o, cennet hazinelerinden bir hazinedir."</em> (Buhârî, Deavat 50; Müslim, Zikir 35)</p>
+                            <p>Bu tesbih, kulun kendi gücünü Allah'ın yardımından ayrı görmediğinin, her işte O'na dayandığının en güzel ifadesidir.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 6. Hz. Yunus’un (a.s.) Duası - Yeni eklenen kart -->
-            <div class="dua-card">
-                <div class="dua-title">🐋 Hz. Yunus’un (a.s.) Duası (Enbiya, 21/87) 🐋</div>
+        <!-- PAGE: Hz. Yunus -->
+        <div class="page-content" id="page-yunus-duasi">
+            <div class="dua-card" id="yunus-duasi">
+                <div class="dua-title">🐋 Hz. Yunus'un (a.s.) Duası (Enbiya, 21/87) 🐋</div>
                 <div class="dua-content">
                     <div class="arabic-part">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2023/05/yunuspeygamberinduasi-308.jpg" 
-                             alt="Hz. Yunus Duası Arapça Metin" 
-                             title="Büyütmek için tıklayın"
-                             loading="lazy">
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2023/05/yunuspeygamberinduasi-308.jpg" alt="Hz. Yunus Duası Arapça Metin" title="Büyütmek için tıklayın" loading="lazy">
                     </div>
                     <div class="turkish-part">
                         <div class="anlam-baslik">Okunuşu ve Anlamı:</div>
-                        <div class="okunus">
-                            لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ
-                        </div>
+                        <div class="okunus">لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ</div>
                         <p><strong>Okunuşu:</strong> Lâ ilâhe illâ ente sübhâneke innî küntü minez zâlimîn.</p>
-                                                
                         <div class="hadis-metni">
-                            <p>📌 <strong>Hadis-i Şerif:</strong> "Sıkıntıya düşen kimse kardeşim Yunus'un duasını okursa Allah onun sıkıntısını giderir. O dua şöyledir: 'Senden başka hiçbir ilah yoktur. Seni eksikliklerden uzak tutarım. Ben gerçekten (nefsine) zulmedenlerden oldum.'" <em>(İbn Teymiyye, Fetaval Kübra, 5/218)</em></p>
-                            <p style="margin-top: 12px;">📌 “Yunus (as) balığın karnında iken yaptığı duâ olan: 'Senden başka hiçbir ilah yoktur. Seni eksikliklerden uzak tutarım. Ben gerçekten (nefsine) zulmedenlerden oldum.' (Enbiya, 21/87) Bu duâyı herhangi bir konuda yaparsa, Allah onun duâsını mutlaka kabul eder.” <em>(Tirmizî, Dua 82)</em></p>
+                            <p>📌 <strong>Hadis-i Şerif:</strong> "Sıkıntıya düşen kimse kardeşim Yunus'un duasını okursa Allah onun sıkıntısını giderir." <em>(İbn Teymiyye, Fetaval Kübra, 5/218)</em></p>
+                            <p style="margin-top: 12px;">📌 "Bu duâyı herhangi bir konuda yaparsa, Allah onun duâsını mutlaka kabul eder." <em>(Tirmizî, Dua 82)</em></p>
                         </div>
-                        
-                        <p style="margin-top: 12px; font-size: 1rem; color: #6b4c2c;">🌟 <strong>Fazileti:</strong> Bu dua, sıkıntı, darlık ve zorluk anlarında okunduğunda Allah'ın izniyle ferahlık ve kurtuluşa vesile olur. Hz. Yunus (a.s.) balığın karnında bu dua ile Allah'a yönelmiş ve kurtuluşa ermiştir.</p>
+                        <p style="margin-top: 12px; font-size: 1rem; color: #6b4c2c;">🌟 <strong>Fazileti:</strong> Bu dua, sıkıntı, darlık ve zorluk anlarında okunduğunda Allah'ın izniyle ferahlık ve kurtuluşa vesile olur.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Allah'ın 99 İsmi Bölümü (En alta eklendi) -->
-        <div class="esma-section">
-            <div class="esma-header">
-                <h2>🤲 Allah'ın 99 İsmi (Esmaü'l-Hüsna) 🤲</h2>
-                <div class="esma-ayet">
-                    <span>“En güzel isimler Allah'ındır. O halde O'na o güzel isimlerle dua edin.”</span> (Araf, 180)
+
+        <!-- PAGE: 99 İsim -->
+        <div class="page-content" id="page-esma">
+            <div class="esma-section" id="esma">
+                <div class="esma-header">
+                    <h2>🤲 Allah'ın 99 İsmi (Esmaü'l-Hüsna) 🤲</h2>
+                    <div class="esma-ayet">
+                        <span>"En güzel isimler Allah'ındır. O halde O'na o güzel isimlerle dua edin."</span> (Araf, 180)
+                    </div>
                 </div>
-            </div>
-            <div class="esma-grid" id="esmaGridContainer">
-                <!-- 99 isim javascript ile dinamik eklenecek (anlamlarıyla) -->
+                <div class="esma-grid" id="esmaGridContainer"></div>
             </div>
         </div>
-    </div>
 
     <!-- Modal (Büyük görsel penceresi) -->
     <div id="imageModal" class="modal">
@@ -804,55 +893,7 @@ Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kaz
     </div>
 
     <script>
-        (function() {
-            // Modal elementleri
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.modal-close');
-
-            // Sayfadaki tüm img'leri seç (sadece dua kartlarının içindeki img'ler)
-            const allImages = document.querySelectorAll('.arabic-part img, .arabic-part.double img');
-            
-            // Her görsele tıklama olayı ekle
-            allImages.forEach(img => {
-                img.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const src = this.getAttribute('src');
-                    const alt = this.getAttribute('alt') || 'Dua görseli';
-                    
-                    if (src) {
-                        modalImg.setAttribute('src', src);
-                        modalImg.setAttribute('alt', alt);
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-            
-            // Modal'ı kapatma fonksiyonu
-            function closeModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
-            }
-            
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        })();
-
-        // Allah'ın 99 İsmi (Arapça, isim, anlam)
+        // ===== 99 İSİM LİSTESİ (tam ve eksiksiz) =====
         const esmaList = [
             { arabic: "الرَّحْمَنُ", name: "Er-Rahmân", meaning: "Rahmeti bol olan, dünyada herkese merhamet eden" },
             { arabic: "الرَّحِيمُ", name: "Er-Rahîm", meaning: "Ahirette müminlere merhamet eden" },
@@ -955,19 +996,120 @@ Allah hiç kimseye, gücünün yeteceğinden fazlasını yüklemez. Herkesin kaz
             { arabic: "الصَّبُورُ", name: "Es-Sabûr", meaning: "Çok sabırlı, hemen cezalandırmayan" }
         ];
 
-        const esmaContainer = document.getElementById('esmaGridContainer');
-        if (esmaContainer) {
-            esmaList.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'esma-item';
-                div.innerHTML = `
-                    <span class="esma-arapca">${item.arabic}</span>
-                    <span class="esma-isim">${item.name}</span>
-                    <span class="esma-anlam">• ${item.meaning}</span>
-                `;
-                esmaContainer.appendChild(div);
-            });
+        // 99 ismi grid'e basan güçlü fonksiyon
+        function loadEsmaNames() {
+            const container = document.getElementById('esmaGridContainer');
+            if (!container) {
+                console.warn("esmaGridContainer bulunamadı!");
+                return;
+            }
+            try {
+                container.innerHTML = ''; // temizle
+                for (let item of esmaList) {
+                    const div = document.createElement('div');
+                    div.className = 'esma-item';
+                    div.innerHTML = `
+                        <span class="esma-arapca">${item.arabic}</span>
+                        <span class="esma-isim">${item.name}</span>
+                        <span class="esma-anlam">• ${item.meaning}</span>
+                    `;
+                    container.appendChild(div);
+                }
+                console.log("99 isim başarıyla yüklendi, toplam:", esmaList.length);
+            } catch(e) {
+                console.error("Liste oluşturulurken hata:", e);
+            }
         }
+
+        // ===== SAYFA (TAB) SİSTEMİ =====
+        (function() {
+            const pages = document.querySelectorAll('.page-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function showPage(pageId) {
+                // Tüm sayfaları gizle
+                pages.forEach(p => p.classList.remove('active'));
+                navLinks.forEach(l => l.classList.remove('active'));
+
+                // İlgili sayfayı göster
+                const target = document.getElementById('page-' + pageId);
+                if (target) {
+                    target.classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Aktif link vurgula + görünür yap
+                const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    activeLink.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+                }
+
+                // Eğer 99 isim sayfasıysa, listeyi yeniden oluştur (görünürlük garantisi)
+                if (pageId === 'esma') {
+                    loadEsmaNames();
+                }
+
+                // Modal için görselleri yeniden bağla
+                rebindImages();
+            }
+
+            // Menü tıklamaları
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showPage(this.getAttribute('data-page'));
+                });
+            });
+
+            // İlk açılışta Ayetel Kürsi göster, ancak 99 ismi de arka planda hazırla
+            showPage('ayetel-kursi');
+            // Sayfa tamamen yüklendiğinde de listeyi doldur (gizli de olsa içerik hazır olsun)
+            window.addEventListener('DOMContentLoaded', function() {
+                loadEsmaNames();
+            });
+        })();
+
+        // ===== MODAL & GÖRSEL BÜYÜTME =====
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Görsel tıklama bağlama - sayfa değiştiğinde yeniden çağrılır
+            window.rebindImages = function() {
+                document.querySelectorAll('.arabic-part img, .arabic-part.double img').forEach(img => {
+                    img.removeEventListener('click', imgClickHandler);
+                    img.addEventListener('click', imgClickHandler);
+                });
+            };
+
+            function imgClickHandler(e) {
+                e.stopPropagation();
+                const src = this.getAttribute('src');
+                const alt = this.getAttribute('alt') || 'Dua görseli';
+                if (src) {
+                    modalImg.setAttribute('src', src);
+                    modalImg.setAttribute('alt', alt);
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+        })();
+
+        // Sayfa yüklendiğinde görsel bağlamalarını yap
+        window.addEventListener('DOMContentLoaded', () => {
+            rebindImages();
+        });
     </script>
 </body>
 </html>
