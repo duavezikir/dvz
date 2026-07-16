@@ -478,7 +478,7 @@
             display: none;
         }
 
-        /* 99 İsim Bölümü Stilleri */
+        /* ===== YENİ: 99 İSİM TABLO STİLLERİ ===== */
         .esma-section {
             margin-top: 0;
             background: #fefcf3;
@@ -520,80 +520,120 @@
             font-style: italic;
         }
 
-        .esma-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 8px;
+        /* Tablo Düzeni - YENİ */
+        .table-wrapper {
+            overflow-x: auto;
+            padding: 20px 24px 30px;
             background: #fef9ef;
-            padding: 28px 24px;
         }
 
-        .esma-item {
-            background: #ffffffea;
-            border-radius: 28px;
-            padding: 14px 18px;
-            transition: all 0.25s ease;
-            border-left: 6px solid #c0a36b;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 6px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 16px;
+            overflow: hidden;
         }
 
-        .esma-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-            background: #fffcf2;
-            border-left-color: #e7b45a;
+        thead {
+            background-color: #1e5a45;
+            color: #f5efdb;
         }
 
-        .esma-arapca {
-            font-size: 1.55rem;
-            font-weight: 700;
+        thead th {
+            padding: 14px 10px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #2c6e53;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tbody td {
+            padding: 10px 8px;
+            border: 1px solid #dce1e8;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 0.85rem;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f6ef;
+        }
+
+        tbody tr:hover {
+            background-color: #f0ebdf;
+            transition: 0.2s;
+        }
+
+        .esma-name-cell {
+            font-weight: 600;
+            color: #1e3a5f;
+            white-space: nowrap;
+        }
+
+        .esma-arapca-cell {
             font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #1f5e47;
-            background: #f3efdf;
-            padding: 3px 12px;
-            border-radius: 40px;
+            white-space: nowrap;
+        }
+
+        .badge-day {
             display: inline-block;
-            letter-spacing: 2px;
+            background-color: #eae3d3;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #3a4a5a;
         }
 
-        .esma-isim {
-            font-size: 1.25rem;
-            font-weight: 800;
+        .badge-time {
+            display: inline-block;
+            background-color: #d4e0ed;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .ebced-value {
+            font-weight: 700;
             color: #8b4b1c;
-            margin-left: 5px;
-        }
-
-        .esma-anlam {
             font-size: 0.95rem;
-            color: #2c4d3b;
-            line-height: 1.4;
-            font-style: normal;
-            border-left: 2px dotted #cbb786;
-            padding-left: 10px;
-            margin-left: 4px;
-            flex: 1;
         }
 
-        @media (max-width: 700px) {
-            .esma-grid {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-            .esma-header h2 {
-                font-size: 1.8em;
-            }
-            .esma-ayet {
-                font-size: 1rem;
-                padding: 8px 18px;
-            }
-            .header .ayet-header {
-                font-size: 1rem;
-                padding: 6px 14px;
-            }
+        .esma-meaning-cell {
+            font-size: 0.8rem;
+            color: #4d5f4d;
+            text-align: left;
+            padding-left: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .esma-header h2 { font-size: 1.8rem; }
+            .esma-ayet { font-size: 1rem; padding: 8px 18px; }
+            .table-wrapper { padding: 12px 10px; }
+            table { font-size: 0.75rem; }
+            thead th, tbody td { padding: 6px 4px; }
+            .esma-arapca-cell { font-size: 1rem; }
+            .badge-day, .badge-time { font-size: 0.65rem; padding: 2px 8px; }
+            .ebced-value { font-size: 0.8rem; }
+        }
+
+        @media (max-width: 500px) {
+            .esma-header h2 { font-size: 1.4rem; }
+            .table-wrapper { padding: 8px 4px; }
+            table { font-size: 0.65rem; }
+            thead th, tbody td { padding: 4px 2px; }
+            .esma-arapca-cell { font-size: 0.85rem; }
+            .badge-day, .badge-time { font-size: 0.55rem; padding: 1px 5px; }
         }
 
         /* Modal Styles */
@@ -749,15 +789,15 @@
             <div class="nav-logo">📿 Dualar ve Zikirler</div>
             <a class="nav-link" href="#" data-page="sureler">📖 4 Sure (Ayetel Kürsi, Amenerrasulü, Hüvallahüllezi, İnşirah)</a>
             <a class="nav-link" href="#" data-page="zikirler">📿 Faziletli Zikirler</a>
-            <a class="nav-link" href="#" data-page="esma">🤲 Allah'ın 99 İsmi</a>
+            <a class="nav-link" href="#" data-page="esma">📊 Allah'ın 99 İsmi (Ebced & Gün & Vakit)</a>
         </div>
     </nav>
     <!-- ================================ -->
 
     <div class="container">
         <div class="header">
-                        <div class="ayet-header">
-                🌿 “Karanlıklardan aydınlığa çıkasınız diye Allah ve melekleri size destek vermektedir. Onun müminlere iyiliği boldur.” (Ahzab 43) 🌿
+            <div class="ayet-header">
+                🌿 "Karanlıklardan aydınlığa çıkasınız diye Allah ve melekleri size destek vermektedir. Onun müminlere iyiliği boldur." (Ahzab 43) 🌿
             </div>
         
         <!-- ===== PAGE: SURELER (Ayetel Kürsi + Amenerrasulü + Hüvallahüllezi + İnşirah) ===== -->
@@ -904,18 +944,22 @@
             </div>
         </div>
 
-        <!-- ===== PAGE: 99 İSİM ===== -->
+        <!-- ===== PAGE: 99 İSİM - EBVED, GÜN VE VAKİT TABLOSU ===== -->
         <div class="page-content" id="page-esma">
             <div class="esma-section" id="esma">
                 <div class="esma-header">
-                    <h2>🤲 Allah'ın 99 İsmi (Esmaü'l-Hüsna) 🤲</h2>
+                    <h2>📊 Allah'ın 99 İsmi (Esmaü'l-Hüsna)</h2>
                     <div class="esma-ayet">
                         <span>"En güzel isimler Allah'ındır. O halde O'na o güzel isimlerle dua edin."</span> (Araf, 180)
                     </div>
                 </div>
-                <div class="esma-grid" id="esmaGridContainer"></div>
+                <div class="table-wrapper" id="esmaTableContainer">
+                    <!-- Tablo JavaScript ile doldurulacak -->
+                </div>
             </div>
         </div>
+
+    </div>
 
     <!-- Modal (Büyük görsel penceresi) -->
     <div id="imageModal" class="modal">
@@ -924,127 +968,149 @@
     </div>
 
     <script>
-        // ===== 99 İSİM LİSTESİ (tam ve eksiksiz) =====
+        // ===== 99 İSİM LİSTESİ - Ebced, Gün ve Vakit Bilgileriyle =====
         const esmaList = [
-            { arabic: "الرَّحْمَنُ", name: "Er-Rahmân", meaning: "Rahmeti bol olan, dünyada herkese merhamet eden" },
-            { arabic: "الرَّحِيمُ", name: "Er-Rahîm", meaning: "Ahirette müminlere merhamet eden" },
-            { arabic: "الْمَلِكُ", name: "El-Melik", meaning: "Mülkün gerçek sahibi, hükümran" },
-            { arabic: "الْقُدُّوسُ", name: "El-Kuddûs", meaning: "Bütün noksanlıklardan uzak, mukaddes" },
-            { arabic: "السَّلَامُ", name: "Es-Selâm", meaning: "Kurtuluş veren, selamet kaynağı" },
-            { arabic: "الْمُؤْمِنُ", name: "El-Mü'min", meaning: "Güven veren, inanç nimeti bahşeden" },
-            { arabic: "الْمُهَيْمِنُ", name: "El-Müheymin", meaning: "Koruyup gözeten, her şeye şahit" },
-            { arabic: "الْعَزِيزُ", name: "El-Azîz", meaning: "Üstün ve mağlup edilmez güç sahibi" },
-            { arabic: "الْجَبَّارُ", name: "El-Cebbâr", meaning: "Dilediğini zorla yaptıran, kudretli" },
-            { arabic: "الْمُتَكَبِّرُ", name: "El-Mütekebbir", meaning: "Büyüklükte eşsiz olan" },
-            { arabic: "الْخَالِقُ", name: "El-Hâlık", meaning: "Yaratan, takdir eden" },
-            { arabic: "الْبَارِئُ", name: "El-Bâri", meaning: "Eşsiz yaratıp vareden" },
-            { arabic: "الْمُصَوِّرُ", name: "El-Musavvir", meaning: "Varlıklara şekil veren" },
-            { arabic: "الْغَفَّارُ", name: "El-Gaffâr", meaning: "Çok bağışlayan, kusurları örten" },
-            { arabic: "الْقَهَّارُ", name: "El-Kahhâr", meaning: "Her şeye galip, kahredici" },
-            { arabic: "الْوَهَّابُ", name: "El-Vehhâb", meaning: "Karşılıksız ihsan eden" },
-            { arabic: "الرَّزَّاقُ", name: "Er-Rezzâk", meaning: "Rızık veren, her şeyin rızkını yaratan" },
-            { arabic: "الْفَتَّاحُ", name: "El-Fettâh", meaning: "Her türlü kapıyı açan, hükmeden" },
-            { arabic: "الْعَلِيمُ", name: "El-Alîm", meaning: "Her şeyi en iyi bilen" },
-            { arabic: "الْقَابِضُ", name: "El-Kâbid", meaning: "Rızıkları daraltan, kabzeden" },
-            { arabic: "الْبَاسِطُ", name: "El-Bâsit", meaning: "Rızkı genişleten, yayıp bolluk veren" },
-            { arabic: "الْخَافِضُ", name: "El-Hâfid", meaning: "Alçaltan, derece indiren" },
-            { arabic: "الرَّافِعُ", name: "Er-Râfî", meaning: "Yücelten, şeref veren" },
-            { arabic: "الْمُعِزُّ", name: "El-Mu'izz", meaning: "Aziz kılan, izzet veren" },
-            { arabic: "الْمُذِلُّ", name: "El-Muzill", meaning: "Zelil eden, alçaltan" },
-            { arabic: "السَّمِيعُ", name: "Es-Semî", meaning: "Her şeyi işiten" },
-            { arabic: "الْبَصِيرُ", name: "El-Basîr", meaning: "Her şeyi gören" },
-            { arabic: "الْحَكَمُ", name: "El-Hakem", meaning: "Hüküm veren, adaletli" },
-            { arabic: "الْعَدْلُ", name: "El-Adl", meaning: "Mutlak adalet sahibi" },
-            { arabic: "اللَّطِيفُ", name: "El-Latîf", meaning: "Lütufkâr, ince işlerin sahibi" },
-            { arabic: "الْخَبِيرُ", name: "El-Habîr", meaning: "Her şeyin iç yüzünü bilen" },
-            { arabic: "الْحَلِيمُ", name: "El-Halîm", meaning: "Yumuşak davranan, cezada acele etmeyen" },
-            { arabic: "الْعَظِيمُ", name: "El-Azîm", meaning: "Ululuk ve azamet sahibi" },
-            { arabic: "الْغَفُورُ", name: "El-Gafûr", meaning: "Çok bağışlayan, affedicidir" },
-            { arabic: "الشَّكُورُ", name: "Eş-Şekûr", meaning: "Az amele çok mükafat veren" },
-            { arabic: "الْعَلِيُّ", name: "El-Aliyy", meaning: "Yüce ve ulu" },
-            { arabic: "الْكَبِيرُ", name: "El-Kebîr", meaning: "Büyüklük sahibi" },
-            { arabic: "الْحَفِيظُ", name: "El-Hafîz", meaning: "Koruyup gözeten" },
-            { arabic: "الْمُقِيتُ", name: "El-Mukît", meaning: "Her şeye güç yetiren, yiyecek veren" },
-            { arabic: "الْحَسِيبُ", name: "El-Hasîb", meaning: "Hesap gören, kâfi" },
-            { arabic: "الْجَلِيلُ", name: "El-Celîl", meaning: "Celâl ve ikram sahibi" },
-            { arabic: "الْكَرِيمُ", name: "El-Kerîm", meaning: "Kerem ve cömertlik sahibi" },
-            { arabic: "الرَّقِيبُ", name: "Er-Rakîb", meaning: "Her an gözetleyen" },
-            { arabic: "الْمُجِيبُ", name: "El-Mucîb", meaning: "Duaları kabul eden" },
-            { arabic: "الْوَاسِعُ", name: "El-Vâsi", meaning: "Rahmeti ve ilmi geniş olan" },
-            { arabic: "الْحَكِيمُ", name: "El-Hakîm", meaning: "Hikmet sahibi" },
-            { arabic: "الْوَدُودُ", name: "El-Vedûd", meaning: "Kullarını seven ve sevilen" },
-            { arabic: "الْمَجِيدُ", name: "El-Mecîd", meaning: "Şerefli ve yüce" },
-            { arabic: "الْبَاعِثُ", name: "El-Bâis", meaning: "Ölümden sonra dirilten" },
-            { arabic: "الشَّهِيدُ", name: "Eş-Şehîd", meaning: "Her şeye şahit olan" },
-            { arabic: "الْحَقُّ", name: "El-Hak", meaning: "Gerçek varlık, hak ve adalet" },
-            { arabic: "الْوَكِيلُ", name: "El-Vekîl", meaning: "Vekil olarak güvenilen" },
-            { arabic: "الْقَوِيُّ", name: "El-Kaviyy", meaning: "Gücü her şeye yeten" },
-            { arabic: "الْمَتِينُ", name: "El-Metîn", meaning: "Çok sağlam, kudretli" },
-            { arabic: "الْوَلِيُّ", name: "El-Veliyy", meaning: "Dost ve yardımcı" },
-            { arabic: "الْحَمِيدُ", name: "El-Hamîd", meaning: "Övülmeye layık" },
-            { arabic: "الْمُحْصِي", name: "El-Muhsî", meaning: "Her şeyi sayan" },
-            { arabic: "الْمُبْدِئُ", name: "El-Mubdi", meaning: "Yaratmaya başlayan" },
-            { arabic: "الْمُعِيدُ", name: "El-Muîd", meaning: "Yok edip yeniden var eden" },
-            { arabic: "الْمُحْيِي", name: "El-Muhyî", meaning: "Hayat veren" },
-            { arabic: "الْمُمِيتُ", name: "El-Mumît", meaning: "Öldüren" },
-            { arabic: "الْحَيُّ", name: "El-Hayy", meaning: "Diri, sonsuz hayat sahibi" },
-            { arabic: "الْقَيُّومُ", name: "El-Kayyûm", meaning: "Her şeyi ayakta tutan" },
-            { arabic: "الْوَاجِدُ", name: "El-Vâcid", meaning: "Dilediğini bulan, hiçbir şeyden yoksuz" },
-            { arabic: "الْمَاجِدُ", name: "El-Mâcid", meaning: "Şanı yüce, kerem sahibi" },
-            { arabic: "الْوَاحِدُ", name: "El-Vâhid", meaning: "Bir ve tek" },
-            { arabic: "الْأَحَدُ", name: "El-Ehad", meaning: "Eşsiz, benzersiz" },
-            { arabic: "الصَّمَدُ", name: "Es-Samed", meaning: "Her şey muhtaç, O hiçbir şeye muhtaç değil" },
-            { arabic: "الْقَادِرُ", name: "El-Kâdir", meaning: "Her şeye gücü yeten" },
-            { arabic: "الْمُقْتَدِرُ", name: "El-Muktedir", meaning: "Her şeyi dilediği gibi yapmaya muktedir" },
-            { arabic: "الْمُقَدِّمُ", name: "El-Mukaddim", meaning: "Dilediğini öne geçiren" },
-            { arabic: "الْمُؤَخِّرُ", name: "El-Muahhir", meaning: "Dilediğini erteleyen" },
-            { arabic: "الْأَوَّلُ", name: "El-Evvel", meaning: "İlk, başlangıcı olmayan" },
-            { arabic: "الْآخِرُ", name: "El-Âhir", meaning: "Son, varlığı sonsuz" },
-            { arabic: "الظَّاهِرُ", name: "Ez-Zâhir", meaning: "Varlığı açık olan" },
-            { arabic: "الْبَاطِنُ", name: "El-Bâtın", meaning: "Gizli olan, her şeyin gerçeği" },
-            { arabic: "الْوَالِي", name: "El-Vâlî", meaning: "Her şeyin sahibi ve yöneticisi" },
-            { arabic: "الْمُتَعَالِي", name: "El-Müteâlî", meaning: "Yücelerden yüce" },
-            { arabic: "الْبَرُّ", name: "El-Berr", meaning: "İyilik ve ihsanı bol" },
-            { arabic: "التَّوَّابُ", name: "Et-Tevvâb", meaning: "Tövbeleri çok kabul eden" },
-            { arabic: "الْمُنْتَقِمُ", name: "El-Müntakim", meaning: "Suçlulardan intikam alan" },
-            { arabic: "الْعَفُوُّ", name: "El-Afüvv", meaning: "Çok affeden" },
-            { arabic: "الرَّؤُوفُ", name: "Er-Raûf", meaning: "Şefkatli, merhametli" },
-            { arabic: "مَالِكُ الْمُلْكِ", name: "Mâlikü’l-Mülk", meaning: "Mülkün gerçek sahibi" },
-            { arabic: "ذُو الْجَلَالِ وَالإِكْرَامِ", name: "Zü'l-Celâli ve'l-İkrâm", meaning: "Celal ve ikram sahibi" },
-            { arabic: "الْمُقْسِطُ", name: "El-Muksit", meaning: "Adaletle hükmeden" },
-            { arabic: "الْجَامِعُ", name: "El-Câmi", meaning: "Dilediğini toplayan" },
-            { arabic: "الْغَنِيُّ", name: "El-Ganiyy", meaning: "Zengin, hiçbir şeye ihtiyacı olmayan" },
-            { arabic: "الْمُغْنِي", name: "El-Mugnî", meaning: "Zenginlik veren" },
-            { arabic: "الْمَانِعُ", name: "El-Mâni", meaning: "Engelleyen, koruyan" },
-            { arabic: "الضَّارُ", name: "Ed-Dârr", meaning: "Dilediğine zarar veren (hikmetle)" },
-            { arabic: "النَّافِعُ", name: "En-Nâfi", meaning: "Dilediğine fayda veren" },
-            { arabic: "النُّورُ", name: "En-Nûr", meaning: "Gökleri ve yeri aydınlatan" },
-            { arabic: "الْهَادِي", name: "El-Hâdî", meaning: "Doğru yolu gösteren" },
-            { arabic: "الْبَدِيعُ", name: "El-Bedî", meaning: "Eşsiz ve örneksiz yaratan" },
-            { arabic: "الْبَاقِي", name: "El-Bâkī", meaning: "Varlığı sonsuz, ebedi" },
-            { arabic: "الْوَارِثُ", name: "El-Vâris", meaning: "Her şeyin gerçek varisi" },
-            { arabic: "الرَّشِيدُ", name: "Er-Reşîd", meaning: "Doğru yola ileten, her işi isabetli" },
-            { arabic: "الصَّبُورُ", name: "Es-Sabûr", meaning: "Çok sabırlı, hemen cezalandırmayan" }
+            { arabic: "اللَّهُ", name: "Allah", meaning: "Tanrı, tüm isimlerin kaynağı", ebced: 66, day: "Pazar", time: "Sabah" },
+            { arabic: "الرَّحْمَنُ", name: "Er-Rahmân", meaning: "Rahmeti bol olan, çok merhamet eden", ebced: 298, day: "Pazar", time: "Sabah" },
+            { arabic: "الرَّحِيمُ", name: "Er-Rahîm", meaning: "Merhamet eden, bağışlayan", ebced: 258, day: "Pazar", time: "Sabah" },
+            { arabic: "الْمَلِكُ", name: "El-Melik", meaning: "Hükümran, mülkün sahibi", ebced: 90, day: "Çarşamba", time: "Utarit" },
+            { arabic: "الْقُدُّوسُ", name: "El-Kuddûs", meaning: "Kutsal, bütün noksanlıklardan uzak", ebced: 170, day: "Perşembe", time: "Müşteri" },
+            { arabic: "السَّلَامُ", name: "Es-Selâm", meaning: "Kusursuz, selamet veren", ebced: 131, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُؤْمِنُ", name: "El-Mü'min", meaning: "Güven veren, inananları koruyan", ebced: 136, day: "Pazartesi", time: "Kamer" },
+            { arabic: "الْمُهَيْمِنُ", name: "El-Müheymin", meaning: "Gözetleyen, koruyan", ebced: 145, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْعَزِيزُ", name: "El-Azîz", meaning: "İzzet sahibi, güçlü", ebced: 94, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْجَبَّارُ", name: "El-Cebbâr", meaning: "Kahredici, dilediğini yaptıran", ebced: 206, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْمُتَكَبِّرُ", name: "El-Mütekebbir", meaning: "Büyüklüğünde eşsiz olan", ebced: 662, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْخَالِقُ", name: "El-Hâlık", meaning: "Yoktan var eden", ebced: 731, day: "Pazar", time: "Güneş" },
+            { arabic: "الْبَارِئُ", name: "El-Bâri", meaning: "Düzenli yaratan", ebced: 213, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُصَوِّرُ", name: "El-Musavvir", meaning: "Şekil veren", ebced: 336, day: "Pazartesi", time: "Kamer" },
+            { arabic: "الْغَفَّارُ", name: "El-Gaffâr", meaning: "Çok affeden", ebced: 1281, day: "Cuma", time: "Zühre" },
+            { arabic: "الْقَهَّارُ", name: "El-Kahhâr", meaning: "Kahredici, galip", ebced: 306, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْوَهَّابُ", name: "El-Vehhâb", meaning: "Çok bağışlayıcı", ebced: 14, day: "Cuma", time: "Zühre" },
+            { arabic: "الرَّزَّاقُ", name: "Er-Rezzâk", meaning: "Rızık veren", ebced: 308, day: "Cuma", time: "Zühre" },
+            { arabic: "الْفَتَّاحُ", name: "El-Fettâh", meaning: "Kapıları açan, kolaylaştıran", ebced: 489, day: "Çarşamba", time: "Utarit" },
+            { arabic: "الْعَلِيمُ", name: "El-Alîm", meaning: "Her şeyi bilen", ebced: 150, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْقَابِضُ", name: "El-Kâbıd", meaning: "Sıkan, daraltan", ebced: 903, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْبَاسِطُ", name: "El-Bâsıt", meaning: "Genişleten, bolluk veren", ebced: 72, day: "Cuma", time: "Zühre" },
+            { arabic: "الْخَافِضُ", name: "El-Hâfid", meaning: "Alçaltan", ebced: 1481, day: "Pazar", time: "Güneş" },
+            { arabic: "الرَّافِعُ", name: "Er-Râfi", meaning: "Yücelten", ebced: 351, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُعِزُّ", name: "El-Mu'izz", meaning: "Şeref veren", ebced: 117, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُذِلُّ", name: "El-Müzill", meaning: "Zelil eden", ebced: 770, day: "Salı", time: "Mirrîh" },
+            { arabic: "السَّمِيعُ", name: "Es-Semî", meaning: "İşiten", ebced: 180, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْبَصِيرُ", name: "El-Basîr", meaning: "Gören", ebced: 302, day: "Pazar", time: "Güneş" },
+            { arabic: "الْحَكَمُ", name: "El-Hakem", meaning: "Hüküm veren", ebced: 68, day: "Pazar", time: "Güneş" },
+            { arabic: "الْعَدْلُ", name: "El-Adl", meaning: "Adil", ebced: 104, day: "Pazar", time: "Güneş" },
+            { arabic: "اللَّطِيفُ", name: "El-Latîf", meaning: "Lütufkar", ebced: 129, day: "Cuma", time: "Zühre" },
+            { arabic: "الْخَبِيرُ", name: "El-Habîr", meaning: "Haberli, her şeyden haberdar", ebced: 812, day: "Pazar", time: "Güneş" },
+            { arabic: "الْحَلِيمُ", name: "El-Halîm", meaning: "Yumuşak, halim", ebced: 88, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْعَظِيمُ", name: "El-Azîm", meaning: "Büyük, azametli", ebced: 1020, day: "Çarşamba", time: "Utarit" },
+            { arabic: "الْغَفُورُ", name: "El-Gafûr", meaning: "Bağışlayıcı", ebced: 1286, day: "Pazar", time: "Güneş" },
+            { arabic: "الشَّكُورُ", name: "Eş-Şekûr", meaning: "Şükrü kabul eden", ebced: 526, day: "Pazar", time: "Güneş" },
+            { arabic: "الْعَلِيُّ", name: "El-Aliyy", meaning: "Yüce", ebced: 110, day: "Pazar", time: "Güneş" },
+            { arabic: "الْكَبِيرُ", name: "El-Kebîr", meaning: "Büyük", ebced: 232, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْحَفِيظُ", name: "El-Hafîz", meaning: "Koruyan", ebced: 998, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْمُقِيتُ", name: "El-Mukît", meaning: "Gıda veren, gözeten", ebced: 550, day: "Pazar", time: "Güneş" },
+            { arabic: "الْحَسِيبُ", name: "El-Hasîb", meaning: "Hesap gören", ebced: 80, day: "Cuma", time: "Zühre" },
+            { arabic: "الْجَلِيلُ", name: "El-Celîl", meaning: "Celal sahibi", ebced: 73, day: "Pazar", time: "Güneş" },
+            { arabic: "الْكَرِيمُ", name: "El-Kerîm", meaning: "Kerem sahibi", ebced: 270, day: "Cuma", time: "Zühre" },
+            { arabic: "الرَّقِيبُ", name: "Er-Rakîb", meaning: "Gözetleyen", ebced: 312, day: "Cuma", time: "Zühre" },
+            { arabic: "الْمُجِيبُ", name: "El-Mücîb", meaning: "Duaları kabul eden", ebced: 55, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْوَاسِعُ", name: "El-Vâsi", meaning: "Geniş, her şeyi kuşatan", ebced: 137, day: "Pazartesi", time: "Kamer" },
+            { arabic: "الْحَكِيمُ", name: "El-Hakîm", meaning: "Hikmet sahibi", ebced: 78, day: "Cuma", time: "Zühre" },
+            { arabic: "الْوَدُودُ", name: "El-Vedûd", meaning: "Seven", ebced: 20, day: "Pazartesi", time: "Kamer" },
+            { arabic: "الْمَجِيدُ", name: "El-Mecîd", meaning: "Şan ve şeref sahibi", ebced: 57, day: "Cuma", time: "Zühre" },
+            { arabic: "الْبَاعِثُ", name: "El-Bâis", meaning: "Dirilten", ebced: 573, day: "Pazar", time: "Güneş" },
+            { arabic: "الشَّهِيدُ", name: "Eş-Şehîd", meaning: "Şahit", ebced: 319, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْحَقُّ", name: "El-Hak", meaning: "Hak, gerçek", ebced: 108, day: "Cuma", time: "Zühre" },
+            { arabic: "الْوَكِيلُ", name: "El-Vekîl", meaning: "Vekil, dayanılan", ebced: 66, day: "Cuma", time: "Zühre" },
+            { arabic: "الْقَوِيُّ", name: "El-Kaviyy", meaning: "Güçlü", ebced: 117, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْمَتِينُ", name: "El-Metîn", meaning: "Metin, sağlam", ebced: 500, day: "Cuma", time: "Zühre" },
+            { arabic: "الْوَلِيُّ", name: "El-Veliyy", meaning: "Dost, koruyan", ebced: 46, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْحَمِيدُ", name: "El-Hamîd", meaning: "Övülmüş", ebced: 68, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْمُحْصِي", name: "El-Muhsî", meaning: "Sayıca bilen", ebced: 148, day: "Cuma", time: "Zühre" },
+            { arabic: "الْمُبْدِئُ", name: "El-Mübdi", meaning: "İlk defa yaratan", ebced: 56, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْمُعِيدُ", name: "El-Muîd", meaning: "Yeniden dirilten", ebced: 124, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْمُحْيِي", name: "El-Muhyî", meaning: "Dirilten", ebced: 68, day: "Cuma", time: "Zühre" },
+            { arabic: "الْمُمِيتُ", name: "El-Mümît", meaning: "Öldüren", ebced: 490, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْحَيُّ", name: "El-Hayy", meaning: "Hayat sahibi", ebced: 18, day: "Pazar", time: "Güneş" },
+            { arabic: "الْقَيُّومُ", name: "El-Kayyûm", meaning: "Kaim, var edici", ebced: 156, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْوَاجِدُ", name: "El-Vâcid", meaning: "Bulan", ebced: 14, day: "Cuma", time: "Zühre" },
+            { arabic: "الْمَاجِدُ", name: "El-Mâcid", meaning: "Şerefli", ebced: 48, day: "Cuma", time: "Zühre" },
+            { arabic: "الْوَاحِدُ", name: "El-Vâhid", meaning: "Bir, tek", ebced: 19, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْأَحَدُ", name: "El-Ehad", meaning: "Bir, eşsiz", ebced: 13, day: "Salı", time: "Mirrîh" },
+            { arabic: "الصَّمَدُ", name: "Es-Samed", meaning: "Her şey ona muhtaç", ebced: 134, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْقَادِرُ", name: "El-Kâdir", meaning: "Güç yetiren", ebced: 305, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُقْتَدِرُ", name: "El-Muktedir", meaning: "Hükümran", ebced: 744, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْمُقَدِّمُ", name: "El-Mukaddim", meaning: "Öne geçiren", ebced: 184, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْمُؤَخِّرُ", name: "El-Muahhir", meaning: "Geri bırakan", ebced: 846, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْأَوَّلُ", name: "El-Evvel", meaning: "İlk", ebced: 37, day: "Pazar", time: "Güneş" },
+            { arabic: "الْآخِرُ", name: "El-Âhir", meaning: "Son", ebced: 801, day: "Cuma", time: "Zühre" },
+            { arabic: "الظَّاهِرُ", name: "Ez-Zâhir", meaning: "Aşikar, görünen", ebced: 1106, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْبَاطِنُ", name: "El-Bâtın", meaning: "Gizli", ebced: 62, day: "Pazar", time: "Kamer" },
+            { arabic: "الْوَالِي", name: "El-Vâlî", meaning: "Yönetici", ebced: 47, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُتَعَالِي", name: "El-Müteâlî", meaning: "Çok yüce", ebced: 551, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "الْبَرُّ", name: "El-Berr", meaning: "İyilik sahibi", ebced: 202, day: "Cuma", time: "Zühre" },
+            { arabic: "التَّوَّابُ", name: "Et-Tevvâb", meaning: "Tövbeleri kabul eden", ebced: 409, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْمُنْتَقِمُ", name: "El-Müntekim", meaning: "İntikam alan", ebced: 630, day: "Salı", time: "Mirrîh" },
+            { arabic: "الْعَفُوُّ", name: "El-Afüvv", meaning: "Affedici", ebced: 156, day: "Pazar", time: "Güneş" },
+            { arabic: "الرَّؤُوفُ", name: "Er-Raûf", meaning: "Şefkatli", ebced: 286, day: "Cumartesi", time: "Zuhal" },
+            { arabic: "مَالِكُ الْمُلْكِ", name: "Mâlikü'l-Mülk", meaning: "Mülkün sahibi", ebced: 212, day: "Çarşamba", time: "Utarit" },
+            { arabic: "ذُو الْجَلَالِ وَالإِكْرَامِ", name: "Zü'l-Celâl ve'l-İkrâm", meaning: "Celal ve ikram sahibi", ebced: 1098, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُقْسِطُ", name: "El-Muksit", meaning: "Adaletle hükmeden", ebced: 209, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْجَامِعُ", name: "El-Câmi", meaning: "Toplayan", ebced: 114, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْغَنِيُّ", name: "El-Ganiyy", meaning: "Zengin, hiçbir şeye muhtaç değil", ebced: 1060, day: "Pazar", time: "Güneş" },
+            { arabic: "الْمُغْنِي", name: "El-Muğnî", meaning: "Zengin eden", ebced: 1100, day: "Cuma", time: "Zühre" },
+            { arabic: "الْمَانِعُ", name: "El-Mâni", meaning: "Engelleyen", ebced: 161, day: "Pazar", time: "Güneş" },
+            { arabic: "الضَّارُ", name: "Ed-Dârr", meaning: "Zarar veren", ebced: 1001, day: "Salı", time: "Mirrîh" },
+            { arabic: "النَّافِعُ", name: "En-Nâfi", meaning: "Fayda veren", ebced: 201, day: "Cuma", time: "Zühre" },
+            { arabic: "النُّورُ", name: "En-Nûr", meaning: "Işık", ebced: 256, day: "Cuma", time: "Zühre" },
+            { arabic: "الْهَادِي", name: "El-Hâdî", meaning: "Doğru yola ileten", ebced: 20, day: "Pazar", time: "Güneş" },
+            { arabic: "الْبَدِيعُ", name: "El-Bedî", meaning: "Örneksiz yaratan", ebced: 86, day: "Perşembe", time: "Müşteri" },
+            { arabic: "الْبَاقِي", name: "El-Bâkî", meaning: "Baki, sonsuz", ebced: 113, day: "Pazar", time: "Güneş" },
+            { arabic: "الْوَارِثُ", name: "El-Vâris", meaning: "Varis, her şeyin sahibi", ebced: 707, day: "Cuma", time: "Zühre" },
+            { arabic: "الرَّشِيدُ", name: "Er-Reşîd", meaning: "Doğru yol gösteren", ebced: 514, day: "Pazar", time: "Güneş" }
         ];
 
-        function loadEsmaNames() {
-            const container = document.getElementById('esmaGridContainer');
+        function loadEsmaTable() {
+            const container = document.getElementById('esmaTableContainer');
             if (!container) return;
-            try {
-                container.innerHTML = '';
-                for (let item of esmaList) {
-                    const div = document.createElement('div');
-                    div.className = 'esma-item';
-                    div.innerHTML = `
-                        <span class="esma-arapca">${item.arabic}</span>
-                        <span class="esma-isim">${item.name}</span>
-                        <span class="esma-anlam">• ${item.meaning}</span>
-                    `;
-                    container.appendChild(div);
-                }
-            } catch(e) {
-                console.error("Liste oluşturulurken hata:", e);
-            }
+            
+            let tableHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Arapça</th>
+                            <th>İsim</th>
+                            <th>Anlamı</th>
+                            <th>Ebced (Zikir Adedi)</th>
+                            <th>Zikir Günü</th>
+                            <th>Zikir Vakti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            esmaList.forEach((item, index) => {
+                tableHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td class="esma-arapca-cell">${item.arabic}</td>
+                        <td class="esma-name-cell">${item.name}</td>
+                        <td class="esma-meaning-cell">${item.meaning}</td>
+                        <td><span class="ebced-value">${item.ebced}</span></td>
+                        <td><span class="badge-day">${item.day}</span></td>
+                        <td><span class="badge-time">${item.time}</span></td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = tableHTML;
         }
 
         // ===== SAYFA (TAB) SİSTEMİ =====
@@ -1069,7 +1135,7 @@
                 }
 
                 if (pageId === 'esma') {
-                    loadEsmaNames();
+                    loadEsmaTable();
                 }
                 rebindImages();
             }
@@ -1083,7 +1149,7 @@
 
             showPage('sureler');
             window.addEventListener('DOMContentLoaded', function() {
-                loadEsmaNames();
+                loadEsmaTable();
             });
         })();
 
