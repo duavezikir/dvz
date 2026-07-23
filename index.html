@@ -455,23 +455,165 @@
             padding: 5px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-        
+
+        /* ===== YENİ: HASBÜNALLAH & HASBİYALLAH YAN YANA (ORİJİNAL DOSYADAKİ GİBİ) ===== */
+        .hasb-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .hasb-row .hasb-card {
+            flex: 1 1 calc(50% - 30px);
+            min-width: 280px;
+            background: #fefcf3;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #e9d6b0;
+            transition: all 0.2s ease;
+        }
+
+        .hasb-row .hasb-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 60, 30, 0.3);
+        }
+
+        .hasb-row .hasb-card .dua-title {
+            background: linear-gradient(145deg, #2b6e4f, #1a5a41);
+            color: #ffefd7;
+            padding: 14px 22px;
+            font-size: 1.4em;
+            font-weight: 600;
+            border-bottom: 3px solid #e0b87b;
+            text-shadow: 1px 1px 2px #1a2e20;
+            letter-spacing: 1px;
+        }
+
+        .hasb-row .hasb-card .hasb-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hasb-row .hasb-card .hasb-arabic {
+            background: #faf3e2;
+            padding: 30px 20px;
+            border-bottom: 3px dashed #bda27a;
+            text-align: center;
+        }
+
+        .hasb-row .hasb-card .hasb-arabic .big-arabic {
+            font-size: 1.3rem;  /* normal metin boyutuna küçültüldü */
+            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', serif;
+            font-weight: 700;
+            color: #1f5e47;
+            background: #ffffffdd;
+            padding: 12px 18px;
+            border-radius: 60px;
+            display: inline-block;
+            border: 2px solid #dbb77a;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .hasb-row .hasb-card .hasb-arabic .verse-arabic {
+            font-size: 1.3rem;
+            line-height: 2;
+            text-align: right;
+            direction: rtl;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            background: #f5efe0;
+            padding: 15px;
+            border-radius: 30px;
+            margin-top: 20px;
+            color: #1f3a2a;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish {
+            background: #fffcf0;
+            padding: 28px 28px;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish .anlam-baslik {
+            font-weight: 700;
+            color: #ab5f2c;
+            font-size: 1.3rem;
+            border-bottom: 2px dotted #c0a16b;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish p {
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+            color: #1e3f2f;
+            margin-bottom: 12px;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish .aciklama-kutusu {
+            background: #f1ebda;
+            border-left: 8px solid #c2a050;
+            border-radius: 28px;
+            padding: 20px 22px;
+            margin-top: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            border-right: 1px solid #e2cfaa;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish .aciklama-kutusu p {
+            font-size: 1rem;
+            line-height: 1.65rem;
+            color: #2c4a34;
+            margin-bottom: 8px;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish .aciklama-kutusu strong {
+            color: #a55417;
+            font-weight: 700;
+        }
+
+        .hasb-row .hasb-card .hasb-turkish .note {
+            font-size: 0.9rem;
+            color: #5f5a4e;
+            background: #f3efe8;
+            border-radius: 30px;
+            padding: 8px 18px;
+            margin-top: 14px;
+            display: inline-block;
+        }
+
+        /* Sağ kart için farklı renk vurgusu (opsiyonel) */
+        .hasb-row .hasb-card.right-card .dua-title {
+            background: linear-gradient(145deg, #1d5a6b, #134654);
+        }
+
+        .hasb-row .hasb-card.right-card .hasb-arabic {
+            background: #eef3f5;
+        }
+
+        .hasb-row .hasb-card.right-card .hasb-turkish .anlam-baslik {
+            color: #1e6575;
+        }
+
+        .hasb-row .hasb-card.right-card .hasb-turkish .aciklama-kutusu {
+            border-left-color: #3f7e8c;
+        }
+
+        .hasb-row .hasb-card.right-card .hasb-turkish .aciklama-kutusu strong {
+            color: #1e6575;
+        }
+
+        .hasb-row .hasb-card.right-card .hasb-turkish .note {
+            background: #e4eef1;
+        }
+
         @media (max-width: 800px) {
-            .zikir-card .dua-content {
-                flex-direction: column;
-            }
-            .zikir-card .arabic-part {
-                border-right: none;
-                border-bottom: 3px dashed #bda27a;
-            }
-            .zikir-card .turkish-part {
-                border-left: none;
-            }
-            .zikir-card .arabic-text {
-                font-size: 1.9rem;
-                padding: 18px 12px;
+            .hasb-row .hasb-card {
+                flex: 1 1 100%;
             }
         }
+
         /* ---------------------------------------- */
         
         .footer-note {
@@ -883,14 +1025,16 @@
                 </div>
             </div>
 
-            <!-- Lâ Havle -->
+            <!-- Lâ Havle (Düzenlendi) -->
             <div class="zikir-card" id="la-havle">
                 <div class="dua-title">🌿 Lâ Havle ve Lâ Kuvvete İllâ Billâh 🌿</div>
                 <div class="dua-content">
-                    <div class="arabic-part">
-                        <div class="arabic-text">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ</div>
-                    </div>
-                    <div class="turkish-part">
+                    <!-- Arapça kısım kaldırıldı, metin Türkçe kısmın üstüne eklendi -->
+                    <div class="turkish-part" style="flex: 1 1 100%; border-left: none;">
+                        <!-- Arapça metin buraya eklendi, normal boyutta -->
+                        <div style="font-family: 'Traditional Arabic', 'Amiri', serif; font-size: 1.3rem; font-weight: 700; color: #1f5e47; background: #f5efe0; padding: 12px 18px; border-radius: 60px; text-align: center; border: 2px solid #dbb77a; margin-bottom: 18px; display: inline-block; align-self: center;">
+                            لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ
+                        </div>
                         <div class="anlam-baslik">📖 Anlamı ve Okunuşu:</div>
                         <div class="okunus">Lâ havle ve lâ kuvvete illâ billâh</div>
                         <p><strong>Türkçe Meali:</strong> "Güç ve kuvvet, ancak Allah'ın yardımıyla elde edilir."</p>
@@ -943,14 +1087,14 @@
                 </div>
             </div>
 
-            <!-- ===== YENİ EKLENEN: Lâ ilâhe illallâhül melikül hakkul mübîn ===== -->
+            <!-- ===== YENİ EKLENEN: Lâ ilâhe illallâhül melikül hakkul mübîn (Düzenlendi) ===== -->
             <div class="zikir-card" id="melik-hak-mubin">
                 <div class="dua-title">👑 Lâ ilâhe illallâhül melikül hakkul mübîn 👑</div>
                 <div class="dua-content">
-                    <div class="arabic-part">
-                        <img src="https://www.islamveihsan.com/wp-content/uploads/2022/07/lailaheillellahulmelikilhakkulmubin-934.jpg" alt="Lâ ilâhe illallâhül melikül hakkul mübîn" title="Büyütmek için tıklayın" loading="lazy" class="zikir-gorsel" style="max-height:400px; width:auto;">
-                    </div>
-                    <div class="turkish-part">
+                    <!-- Arapça kısım kaldırıldı, resim doğrudan Türkçe kısmın üstüne eklendi -->
+                    <div class="turkish-part" style="flex: 1 1 100%; border-left: none;">
+                        <!-- Resim buraya eklendi -->
+                        <img src="https://www.islamveihsan.com/wp-content/uploads/2022/07/lailaheillellahulmelikilhakkulmubin-934.jpg" alt="Lâ ilâhe illallâhül melikül hakkul mübîn" title="Büyütmek için tıklayın" loading="lazy" class="zikir-gorsel" style="max-height:200px; width:auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; cursor: pointer;" onclick="openModal(this.src, this.alt)">
                         <div class="anlam-baslik">📖 Okunuşu ve Anlamı:</div>
                         <div class="okunus">Lâ ilâhe illallâhül melikül hakkul mübîn</div>
                         <p><strong>Türkçe Meali:</strong> “Bütün saltanat ve hükümranlık kendisinin olan (Melik) ve apaçık yegâne hakikatin ta kendisi olan Allah’tan başka hiçbir ilâh yoktur.”</p>
@@ -962,6 +1106,60 @@
                 </div>
             </div>
             <!-- ===== YENİ EKLENEN KART BİTTİ ===== -->
+
+            <!-- ============================================================== -->
+            <!-- ===== YENİ: HASBÜNALLAH & HASBİYALLAH (ORİJİNAL DOSYADAKİ GİBİ YAN YANA) ===== -->
+            <div class="hasb-row">
+
+                <!-- Sol Kart: Hasbünallah -->
+                <div class="hasb-card">
+                    <div class="dua-title">📖 Hasbünallah ve Ni'mel Vekîl (Âl-i İmrân 173)</div>
+                    <div class="hasb-content">
+                        <div class="hasb-arabic">
+                            <div class="big-arabic">حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَكِيلُ</div>
+                            <div class="verse-arabic">
+                                الَّذِينَ قَالَ لَهُمُ النَّاسُ إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ
+                            </div>
+                        </div>
+                        <div class="hasb-turkish">
+                            <div class="anlam-baslik">Türkçe Meali</div>
+                            <p>“Onlar ki, insanlar kendilerine: ‘İnsanlar size karşı ordu toplamışlar, onlardan korkun!’ dediler de bu, onların imanlarını artırdı ve <strong>‘Allah bize yeter, O ne güzel vekildir!’</strong> dediler.”</p>
+                            <div class="anlam-baslik" style="margin-top: 15px;">Anlamı</div>
+                            <p><strong>“Allah bize yeter, O ne güzel vekildir.”</strong></p>
+                            <div class="aciklama-kutusu">
+                                <p><strong>📖 Tefsir &amp; Bağlam:</strong> Uhud Savaşı sonrası müşriklerin tekrar saldıracağı haberi üzerine müminlerin söylediği bu dua, <strong>kolektif tevekkülü</strong> simgeler. Topluluk olarak Allah’a sığındığında, “<strong>bize</strong>” ifadesiyle cemaat ruhu ve dayanışma öne çıkar.</p>
+                                <p style="margin-top: 10px;">☝️ <strong>Not:</strong> “Hasbüyallahu ve Ni’mel Vekîl” (Allah bana yeter) şeklinde bireysel olarak da kullanılır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kart: Hasbiyallah -->
+                <div class="hasb-card right-card">
+                    <div class="dua-title">📖 Hasbiyallah (Tevbe 129)</div>
+                    <div class="hasb-content">
+                        <div class="hasb-arabic">
+                            <div class="big-arabic">حَسْبِيَ اللّٰهُ</div>
+                            <div class="verse-arabic">
+                                فَإِن تَوَلَّوْا فَقُلْ حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ
+                            </div>
+                        </div>
+                        <div class="hasb-turkish">
+                            <div class="anlam-baslik">Türkçe Meali</div>
+                            <p>“Eğer yüz çevirirlerse de ki: <strong>‘Bana Allah yeter.</strong> O’ndan başka hiçbir ilâh yoktur. Ben ancak O’na tevekkül ettim. O, yüce Arş’ın sahibidir.’”</p>
+                            <div class="anlam-baslik" style="margin-top: 15px;">Anlamı</div>
+                            <p><strong>“Allah bana yeter.”</strong></p>
+                            <div class="aciklama-kutusu">
+                                <p><strong>📖 Tefsir &amp; Bağlam:</strong> Tevbe Suresi’nin son âyetinde Hz. Peygamber’e hitaben, insanlar yüz çevirdiğinde söylenmesi emredilen bu zikir, <strong>bireysel bir sığınmayı</strong> ifade eder. Yalnız kalındığında, çaresizlik anında kulun Rabbine “<strong>Bana</strong> yetersin!” diyerek yönelişidir.</p>
+                                <p style="margin-top: 10px;">☝️ <strong>Fark:</strong> “Hasbünallah” (bize) çoğul ve kolektiftir. “Hasbiyallah” (bana) ise bireysel, özel ve kişisel bir tevekküldür.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ============================================================== -->
+
         </div>
 
         <!-- ===== PAGE: 99 İSİM - EBVED, GÜN VE VAKİT TABLOSU ===== -->
@@ -1184,8 +1382,16 @@
                 document.body.style.overflow = '';
             }
 
+            // Modal'ı manuel olarak açmak için global fonksiyon
+            window.openModal = function(src, alt) {
+                modalImg.setAttribute('src', src);
+                modalImg.setAttribute('alt', alt || 'Dua görseli');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
             window.rebindImages = function() {
-                document.querySelectorAll('.arabic-part img, .arabic-part.double img').forEach(img => {
+                document.querySelectorAll('.arabic-part img, .arabic-part.double img, .zikir-card .turkish-part img').forEach(img => {
                     img.removeEventListener('click', imgClickHandler);
                     img.addEventListener('click', imgClickHandler);
                 });
@@ -1196,10 +1402,7 @@
                 const src = this.getAttribute('src');
                 const alt = this.getAttribute('alt') || 'Dua görseli';
                 if (src) {
-                    modalImg.setAttribute('src', src);
-                    modalImg.setAttribute('alt', alt);
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    openModal(src, alt);
                 }
             }
 
